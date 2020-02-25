@@ -2,7 +2,7 @@
 
 This is a repository of all software and documentation related to the "Overkill Solar" BMS
 
-For the freshest discussion, go to Reddit.com/r/OverkillSolarBMS/
+For the freshest discussion, go to www.Reddit.com/r/OverkillSolarBMS/
 
 It contains:
 

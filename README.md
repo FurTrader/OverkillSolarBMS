@@ -6,7 +6,7 @@ For the freshest discussion, go to www.Reddit.com/r/OverkillSolarBMS/
 
 It contains:
 
-- desktop software for setting BMS parameters with a PC and an RS232 com port (AKA the USB module)
+- desktop software for setting BMS parameters with a PC and a TTL com port (AKA the USB module)
 - Android app for setting BMS parameters with the Bluetooth module 
 - IOS app is on the Apple app store here: https://apps.apple.com/us/app/xiaoxiang-bms/id1375405426
 - Instructions for connecting the BMS to the various apps

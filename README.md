@@ -4,6 +4,8 @@ This is a repository of all software and documentation related to the "Overkill 
 
 For the freshest discussion, go to www.Reddit.com/r/OverkillSolarBMS/
 
+Also contact me at OverkillSolar@gmail.com
+
 It contains:
 
 - desktop software for setting BMS parameters with a PC and a TTL com port (AKA the USB module)

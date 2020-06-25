@@ -2,6 +2,8 @@
 
 This is a repository of all software and documentation related to the "Overkill Solar" BMS
 
+For sale on OverkillSolar.com
+
 For the freshest discussion, go to www.Reddit.com/r/OverkillSolarBMS/
 
 Also contact me at OverkillSolar@gmail.com

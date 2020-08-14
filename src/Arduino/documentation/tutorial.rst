@@ -4,8 +4,8 @@ Overkill Solar BMS Monitor Library
 Introduction
 ------------
 
-.. image:: bms_120a_4s.png
-   :scale: 30 %
+.. image:: bms_120a_4s.jpg
+   :scale: 60 %
 
 This library communicates with an Overkill Solar BMS (Battery Monitoring
 System), which can be purchased from https://overkillsolar.com/
@@ -54,8 +54,9 @@ above, you will be supporting the developer who wrote this library.
 
 - https://overkillsolar.com/?myboi=NeilJansen
 
-.. image:: overkill_solar_logo.png
+.. image:: overkill_solar_logo.jpg
     :alt: Overkill Solar
+    :scale: 60 %
 
 
 "Bare Metal" Disclaimer

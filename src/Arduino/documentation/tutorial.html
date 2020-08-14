@@ -1,0 +1,1348 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.16: http://docutils.sourceforge.net/" />
+<title>tutorial.rst</title>
+<style type="text/css">
+
+/*
+:Author: Neil Jansen
+:Contact: njansen1@gmail.com
+:Copyright: BSD 3-clause (see LICENSE.txt)
+
+Stylesheet for use with Docutils.
+*/
+
+@import url(html4css1.css);
+
+/* Your customizations go here.  For example: */
+
+body {
+  font-family: Roboto, Verdana, sans-serif;
+  margin: 0px 100px 0px 100px;
+  line-height: 1.6;
+}
+
+em, i {
+  /* Typically serif fonts have much nicer italics */
+  font-family: Times New Roman, Times, serif;
+}
+
+/*a.target {
+  color: blue;
+}
+*/
+/*a.toc-backref {
+  text-decoration: none;
+  color: black;
+}
+*/
+a.toc-backref:hover {
+  background-color: inherit;
+}
+
+a:hover {
+  background-color: #cccccc;
+}
+
+div.attention, div.caution, div.danger, div.error, div.hint,
+div.important, div.note, div.tip, div.warning {
+  background-color: #cccccc;
+  padding: 3px;
+  width: 80%;
+}
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title  {
+  text-align: center;
+  background-color: #999999;
+  display: block;
+  margin: 0;
+}
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: #cc0000;
+  font-family: sans-serif;
+  text-align: center;
+  background-color: #999999;
+  display: block;
+  margin: 0;
+}
+
+pre.code .ln { color: grey; } /* line numbers */
+
+/* NOTE: Assumes Pygments-highlight mode is "Short" */
+pre.code .hll { background-color: #49483e }
+pre.code      { background: #272822; color: #f8f8f2 }
+pre.code .c   { color: #75715e } /* Comment */
+pre.code .err { color: #960050; background-color: #1e0010 } /* Error */
+pre.code .k   { color: #66d9ef; font-weight: bold } /* Keyword */
+pre.code .l   { color: #ae81ff } /* Literal */
+pre.code .n   { color: #f8f8f2 } /* Name */
+pre.code .o   { color: #f92672 } /* Operator */
+pre.code .p   { color: #f8f8f2 } /* Punctuation */
+pre.code .ch  { color: #75715e } /* Comment.Hashbang */
+pre.code .cm  { color: #75715e } /* Comment.Multiline */
+pre.code .cp  { color: #f92472; font-weight: bold } /* Comment.Preproc */
+pre.code .cpf { color: #f92472; font-weight: bold } /* Comment.PreprocFile */
+pre.code .c1  { color: #75715e } /* Comment.Single */
+pre.code .cs  { color: #75715e } /* Comment.Special */
+pre.code .gd  { color: #f92672 } /* Generic.Deleted */
+pre.code .ge  { font-style: italic } /* Generic.Emph */
+pre.code .gi  { color: #a6e22e } /* Generic.Inserted */
+pre.code .gs  { font-weight: bold } /* Generic.Strong */
+pre.code .gu  { color: #75715e } /* Generic.Subheading */
+pre.code .kc  { color: #66d9ef } /* Keyword.Constant */
+pre.code .kd  { color: #66d9ef } /* Keyword.Declaration */
+pre.code .kn  { color: #f92672 } /* Keyword.Namespace */
+pre.code .kp  { color: #66d9ef } /* Keyword.Pseudo */
+pre.code .kr  { color: #66d9ef } /* Keyword.Reserved */
+pre.code .kt  { color: #66d9ef } /* Keyword.Type */
+pre.code .ld  { color: #e6db74 } /* Literal.Date */
+pre.code .m   { color: #ae81ff } /* Literal.Number */
+pre.code .s   { color: #e1da70 } /* Literal.String */
+pre.code .na  { color: #a6e22e } /* Name.Attribute */
+pre.code .nb  { color: #f8f8f2 } /* Name.Builtin */
+pre.code .nc  { color: #a6e22e } /* Name.Class */
+pre.code .no  { color: #66d9ef } /* Name.Constant */
+pre.code .nd  { color: #a6e22e } /* Name.Decorator */
+pre.code .ni  { color: #f8f8f2 } /* Name.Entity */
+pre.code .ne  { color: #a6e22e } /* Name.Exception */
+pre.code .nf  { color: #a6e22e } /* Name.Function */
+pre.code .nl  { color: #f8f8f2 } /* Name.Label */
+pre.code .nn  { color: #f8f8f2 } /* Name.Namespace */
+pre.code .nx  { color: #a6e22e } /* Name.Other */
+pre.code .py  { color: #f8f8f2 } /* Name.Property */
+pre.code .nt  { color: #f92672 } /* Name.Tag */
+pre.code .nv  { color: #f8f8f2 } /* Name.Variable */
+pre.code .ow  { color: #f92672 } /* Operator.Word */
+pre.code .w   { color: #f8f8f2 } /* Text.Whitespace */
+pre.code .mb  { color: #ae81ff } /* Literal.Number.Bin */
+pre.code .mf  { color: #ae81ff } /* Literal.Number.Float */
+pre.code .mh  { color: #ae81ff } /* Literal.Number.Hex */
+pre.code .mi  { color: #ae81ff } /* Literal.Number.Integer */
+pre.code .mo  { color: #ae81ff } /* Literal.Number.Oct */
+pre.code .sa  { color: #e1da70 } /* Literal.String.Affix */
+pre.code .sb  { color: #e1da70 } /* Literal.String.Backtick */
+pre.code .sc  { color: #e1da70 } /* Literal.String.Char */
+pre.code .dl  { color: #e1da70 } /* Literal.String.Delimiter */
+pre.code .sd  { color: #e1da70 } /* Literal.String.Doc */
+pre.code .s2  { color: #e1da70 } /* Literal.String.Double */
+pre.code .se  { color: #ae81ff } /* Literal.String.Escape */
+pre.code .sh  { color: #e1da70 } /* Literal.String.Heredoc */
+pre.code .si  { color: #e1da70 } /* Literal.String.Interpol */
+pre.code .sx  { color: #e1da70 } /* Literal.String.Other */
+pre.code .sr  { color: #e1da70 } /* Literal.String.Regex */
+pre.code .s1  { color: #e1da70 } /* Literal.String.Single */
+pre.code .ss  { color: #e1da70 } /* Literal.String.Symbol */
+pre.code .bp  { color: #f8f8f2 } /* Name.Builtin.Pseudo */
+pre.code .fm  { color: #a6e22e } /* Name.Function.Magic */
+pre.code .vc  { color: #f8f8f2 } /* Name.Variable.Class */
+pre.code .vg  { color: #f8f8f2 } /* Name.Variable.Global */
+pre.code .vi  { color: #f8f8f2 } /* Name.Variable.Instance */
+pre.code .vm  { color: #f8f8f2 } /* Name.Variable.Magic */
+pre.code .il  { color: #ae81ff } /* Literal.Number.Integer.Long */
+
+pre.literal-block, pre.doctest-block {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #606060;
+  padding: 15px;
+}
+
+h1 tt, h2 tt, h3 tt, h4 tt, h5 tt, h6 tt {
+  font-size: 100%;
+}
+
+code, tt {
+  color: #000066;
+}
+
+/*Top, right, bottom, left*/
+
+
+table {
+	margin: 0;
+	padding: 7px;
+	border: 0px;
+	outline: 0;
+	font-size: 100%;
+	font:inherit;
+	vertical-align:  baseline;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+th, td {
+  font-weight: unset;
+  padding-right: 10px;
+  vertical-align:  baseline;
+}
+
+th {
+  font-family: Roboto-Bold, Verdana, sans-serif;
+  font-weight: bold;
+  text-align: left;
+  padding-top: 12px;
+  padding-bottom: 5px;
+  color: #333333;
+  line-height: 1.4;
+  text-transform: uppercase;
+  border-bottom: 1px solid #a2a2a2;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+td {
+  font-family: Roboto-Medium, Verdana, sans-serif;
+  font-size: 15px;
+  line-height: 1.4;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 1px solid #a2a2a2;
+}
+
+tr {
+  border-bottom: 1px solid #a2a2a2;
+}
+
+
+</style>
+<style type="text/css">
+
+/*
+*   math2html: convert LaTeX equations to HTML output.
+*
+*   Copyright (C) 2009,2010 Alex Fernández
+*
+*   Released under the terms of the `2-Clause BSD license'_, in short:
+*   Copying and distribution of this file, with or without modification,
+*   are permitted in any medium without royalty provided the copyright
+*   notice and this notice are preserved.
+*   This file is offered as-is, without any warranty.
+*
+* .. _2-Clause BSD license: http://www.spdx.org/licenses/BSD-2-Clause
+*
+*   Based on eLyXer: convert LyX source files to HTML output.
+*   http://elyxer.nongnu.org/
+*/
+/* --end--
+* CSS file for LaTeX formulas.
+*/
+
+/* Formulas */
+.formula {
+	text-align: center;
+	font-family: "Droid Serif", "DejaVu Serif", "STIX", serif;
+	margin: 1.2em 0;
+}
+span.formula {
+	white-space: nowrap;
+}
+div.formula {
+	padding: 0.5ex;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Basic features */
+a.eqnumber {
+	display: inline-block;
+	float: right;
+	clear: right;
+	font-weight: bold;
+}
+span.unknown {
+	color: #800000;
+}
+span.ignored, span.arraydef {
+	display: none;
+}
+.formula i {
+	letter-spacing: 0.1ex;
+}
+
+/* Alignment */
+.align-left, .align-l {
+	text-align: left;
+}
+.align-right, .align-r {
+	text-align: right;
+}
+.align-center, .align-c {
+	text-align: center;
+}
+
+/* Structures */
+span.overline, span.bar {
+	text-decoration: overline;
+}
+.fraction, .fullfraction {
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+}
+.fraction .fraction {
+	font-size: 80%;
+	line-height: 100%;
+}
+span.numerator {
+	display: block;
+}
+span.denominator {
+	display: block;
+	padding: 0ex;
+	border-top: thin solid;
+}
+sup.numerator, sup.unit {
+	font-size: 70%;
+	vertical-align: 80%;
+}
+sub.denominator, sub.unit {
+	font-size: 70%;
+	vertical-align: -20%;
+}
+span.sqrt {
+	display: inline-block;
+	vertical-align: middle;
+	padding: 0.1ex;
+}
+sup.root {
+	font-size: 70%;
+	position: relative;
+	left: 1.4ex;
+}
+span.radical {
+	display: inline-block;
+	padding: 0ex;
+	font-size: 150%;
+	vertical-align: top;
+}
+span.root {
+	display: inline-block;
+	border-top: thin solid;
+	padding: 0ex;
+	vertical-align: middle;
+}
+span.symbol {
+	line-height: 125%;
+	font-size: 125%;
+}
+span.bigsymbol {
+	line-height: 150%;
+	font-size: 150%;
+}
+span.largesymbol {
+	font-size: 175%;
+}
+span.hugesymbol {
+	font-size: 200%;
+}
+span.scripts {
+	display: inline-table;
+	vertical-align: middle;
+}
+.script {
+	display: table-row;
+	text-align: left;
+	line-height: 150%;
+}
+span.limits {
+	display: inline-table;
+	vertical-align: middle;
+}
+.limit {
+	display: table-row;
+	line-height: 99%;
+}
+sup.limit, sub.limit {
+	line-height: 100%;
+}
+span.symbolover {
+	display: inline-block;
+	text-align: center;
+	position: relative;
+	float: right;
+	right: 100%;
+	bottom: 0.5em;
+	width: 0px;
+}
+span.withsymbol {
+	display: inline-block;
+}
+span.symbolunder {
+	display: inline-block;
+	text-align: center;
+	position: relative;
+	float: right;
+	right: 80%;
+	top: 0.3em;
+	width: 0px;
+}
+
+/* Environments */
+span.array, span.bracketcases, span.binomial, span.environment {
+	display: inline-table;
+	text-align: center;
+	border-collapse: collapse;
+	margin: 0em;
+	vertical-align: middle;
+}
+span.arrayrow, span.binomrow {
+	display: table-row;
+	padding: 0ex;
+	border: 0ex;
+}
+span.arraycell, span.bracket, span.case, span.binomcell, span.environmentcell {
+	display: table-cell;
+	padding: 0ex 0.2ex;
+	line-height: 99%;
+	border: 0ex;
+}
+/*
+* CSS file for LaTeX formulas, extra stuff:
+* binomials, vertical braces, stackrel, fonts and colors.
+*/
+
+/* Inline binomials */
+span.binom {
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 80%;
+}
+span.binomstack {
+	display: block;
+	padding: 0em;
+}
+
+/* Over- and underbraces */
+span.overbrace {
+	border-top: 2pt solid;
+}
+span.underbrace {
+	border-bottom: 2pt solid;
+}
+
+/* Stackrel */
+span.stackrel {
+	display: inline-block;
+	text-align: center;
+}
+span.upstackrel {
+	display: block;
+	padding: 0em;
+	font-size: 80%;
+	line-height: 64%;
+	position: relative;
+	top: 0.15em;
+
+}
+span.downstackrel {
+	display: block;
+	vertical-align: bottom;
+	padding: 0em;
+}
+
+/* Fonts */
+span.mathsf, span.textsf {
+	font-style: normal;
+	font-family: sans-serif;
+}
+span.mathrm, span.textrm {
+	font-style: normal;
+	font-family: serif;
+}
+span.text, span.textnormal {
+	font-style: normal;
+}
+span.textipa {
+	color: #008080;
+}
+span.fraktur {
+	font-family: "Lucida Blackletter", eufm10, blackletter;
+}
+span.blackboard {
+	font-family: Blackboard, msbm10, serif;
+}
+span.scriptfont {
+	font-family: "Monotype Corsiva", "Apple Chancery", "URW Chancery L", cursive;
+	font-style: italic;
+}
+
+/* Colors */
+span.colorbox {
+	display: inline-block;
+	padding: 5px;
+}
+span.fbox {
+	display: inline-block;
+	border: thin solid black;
+	padding: 2px;
+}
+span.boxed, span.framebox {
+	display: inline-block;
+	border: thin solid black;
+	padding: 5px;
+}
+
+
+</style>
+</head>
+<body>
+<div class="document">
+
+
+<div class="section" id="overkill-solar-bms-monitor-library">
+<h1>Overkill Solar BMS Monitor Library</h1>
+<div class="section" id="introduction">
+<h2>Introduction</h2>
+<img alt="bms_120a_4s.png" src="bms_120a_4s.png" style="width: 450.0px; height: 355.5px;" />
+<p>This library communicates with an Overkill Solar BMS (Battery Monitoring
+System), which can be purchased from <a class="reference external" href="https://overkillsolar.com/">https://overkillsolar.com/</a></p>
+<p>If you'd like to purchase an Overkill Solar battery monitoring system, use this
+link:</p>
+<p>This library is capable of returning the following information:</p>
+<ul>
+<li><p class="first">Total voltage, in volts</p>
+</li>
+<li><p class="first">Current in amps</p>
+</li>
+<li><p class="first">Balance capacity in amp-hours</p>
+</li>
+<li><p class="first">Rate capacity in amp-hours</p>
+</li>
+<li><p class="first">Cycle count</p>
+</li>
+<li><p class="first">Production date:</p>
+</li>
+<li><p class="first">Balance status of each cell</p>
+</li>
+<li><p class="first">Software version</p>
+</li>
+<li><p class="first">Remaining state of charge, 0-100 percent</p>
+</li>
+<li><p class="first">Charge FET on/off status</p>
+</li>
+<li><p class="first">Discharge FET on/off status</p>
+</li>
+<li><p class="first"># of batteries in series (int)</p>
+</li>
+<li><p class="first"># of NTCS [the number of temperature sensors present] (int)</p>
+</li>
+<li><p class="first">Temperatures of each temperature sensor, in Celsius (up to 16 floats)</p>
+</li>
+<li><p class="first">Voltages of each cell, in volts</p>
+</li>
+<li><p class="first">Protection status flags:</p>
+<blockquote>
+<ul class="simple">
+<li>Software lock MOS</li>
+<li>Front-end detection IC error</li>
+<li>Short circuit protection</li>
+<li>Discharge overcurrent protection</li>
+<li>Charging overcurrent protection</li>
+<li>Discharge low-temperature protection</li>
+<li>Discharge over-temperature protection</li>
+<li>Charging low temperature protection</li>
+<li>Charging over-temperature protection</li>
+<li>Whole pack undervoltage protection</li>
+<li>Whole pack overvoltage protection</li>
+<li>Single cell undervoltage protection</li>
+<li>Single cell overvoltage protection</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="library-sponsor-and-open-source-commitment">
+<h2>Library Sponsor and Open Source Commitment</h2>
+<p>Overkill Solar supports the open-source community, and by clicking on the link
+above, you will be supporting the developer who wrote this library.</p>
+<ul class="simple">
+<li><a class="reference external" href="https://overkillsolar.com/?myboi=NeilJansen">https://overkillsolar.com/?myboi=NeilJansen</a></li>
+</ul>
+<img alt="Overkill Solar" src="overkill_solar_logo.png" />
+</div>
+</div>
+<div class="section" id="bare-metal-disclaimer">
+<h1>&quot;Bare Metal&quot; Disclaimer</h1>
+<p>By using this library, you accept the small but quantifiable risk that
+you may damage or destroy the BMS or batteries if precautions are not followed.
+We've tested this library and have taken precautions to ensure that it works
+as it is expected to, but we cannot test all possible configurations, and
+cannot give any guarantees once it is modified or used on an untested
+platform.</p>
+<p>If you're an experienced embedded software developer, then the usage of this
+libray should be extremely straightforward.  We've followed standard
+Arduino library standards of practice.</p>
+<p>If not, then please heed the following advice:</p>
+<ul class="simple">
+<li>Realize that while the Arduino platform is one of the easiest platforms to
+learn embedded computing on, you're still moving ones and zeros around
+on bare metal (<a class="reference external" href="https://en.wikipedia.org/wiki/Bare_machine">https://en.wikipedia.org/wiki/Bare_machine</a>).  This means that
+small changes may have a large (and potentially disastrous) effect.  Unlike
+a laptop, PC, or mobile device, memory locations are not protected and
+therefore, it is easy to shoot yourself in the foot if you are not careful.
+Our advice to you, dear reader, is to practice your Arduino mastery on a
+small sensor or display first, before graduating into something of this
+magnitude.</li>
+<li>Read the introduction (<a class="reference external" href="https://www.arduino.cc/en/Guide/Introduction">https://www.arduino.cc/en/Guide/Introduction</a>)
+if you are new to the Arduino platform.</li>
+<li>Read the documentation on installing Arduino libraries
+(<a class="reference external" href="https://www.arduino.cc/en/Guide/Libraries">https://www.arduino.cc/en/Guide/Libraries</a>) and writing libraries
+(<a class="reference external" href="https://www.arduino.cc/en/Hacking/LibraryTutorial">https://www.arduino.cc/en/Hacking/LibraryTutorial</a>) if you are new to usiung,
+writing, or modifying libraries on the Arduino platform.</li>
+<li>This library was written for the Arduino AVR platform.  Other platforms
+may work, but are not supported at this time.  Specifically, the libray has
+been tested to work with the Arduino Pro Micro and Arduino Mega 2560.</li>
+<li>Solar battery systems can produce tremendous energy, and can be dangerous
+if proper precautions are not followed.  A complete course in electrical
+theory of operation is of-of-scope for this document.</li>
+</ul>
+</div>
+<div class="section" id="theory-of-operation">
+<h1>Theory of Operation</h1>
+<p>This library was written to conform with the serial protocol published here:
+<a class="reference external" href="https://github.com/FurTrader/OverkillSolarBMS/blob/master/JBD%20Protocol%20English%20version.pdf">https://github.com/FurTrader/OverkillSolarBMS/blob/master/JBD%20Protocol%20English%20version.pdf</a>
+The protocol is Modbus-like, in that it's a binary protocol that sends and
+receives frames that consist of a fixed start byte, an address register,
+variable-length data, a checksum, and a fixed stop byte.</p>
+<p>The Arduino communicates with the BMS over a 5V TTL asynchronous serial port
+connection, at 9600 baud, 8 data bits, no parity, and 1 stop bit.</p>
+<p>The library is intended to be used in a similar manner to typical Arduino
+libraries.  The constructor call is typically placed near the top of the
+sketch.  The library is initialized within the sketch's <tt class="docutils literal">setup()</tt>
+function.  And in order for it to read and write to the serial port, the
+<tt class="docutils literal">bms.main_task()</tt> function must be called repeatedtly in the sketch's
+<tt class="docutils literal">loop()</tt> function.  Typically, the sketch will need to do other things
+while the serial port task is running.  For example, writing the received
+data to the screen, or reading buttons or encoders.  The Arduino is not
+multi-threaded, and cannot run things simultaneously.  However, as long as
+each task is very short (on the order of microseconds or milliseconds),
+the tasks can take turns carrying out their role.  The BMS library's main task
+handles all of the reading and writing on the BMS serial port.  It needs
+to be called at least once every 25 milliseconds (it may be called faster).
+This means that the other tasks being performed should not take longer
+than 25 milliseconds to execute.  Even a single <tt class="docutils literal">delay(1000);</tt> call
+would block access to the serial port.  If this strategy isn't desirable,
+then it's possible to setup a periodic hardware timer to call an interrupt,
+and have the interrupt call the <tt class="docutils literal">bms.main_task()</tt> function.  This may
+have other side-effects, so only use this as a last resort.</p>
+<p>The library periodically requests basic info and cell voltage from the BMS
+at a default rate of 1000 milliseconds. This periodic rate may be configured
+to any value, although values under 250 milliseconds are not recommended.</p>
+<p>Response data is received from the BMS in the <tt class="docutils literal">bms.serial_rx_task()</tt> method.
+Whenever this method is called, it will read all available bytes from the
+serial port and sequentially pass them to the framer.  The framer's job is
+to reconstruct each frame.  It will begin by waiting for a start byte, then
+the command code (register address), then the status byte, the length byte,
+the data, two checksum bytes, and finally the stop byte.  The internal
+state of the framer is stored in memory, so in some cases, the
+<tt class="docutils literal">bms.serial_rx_task()</tt> may need to be called several times before a full frame
+is received.</p>
+<p>Once a frame is received, it is checked for validity.  If the checksum passes,
+and the status by indicates that is correct, the data is stored internally.
+This data is stored in a raw state that's much more memory efficient than its
+full decoded form.  When the data is requested, the encoded form is converted
+to the full form and returned.  For example, the voltage is stored in 2 bytes
+of memory, but when requested, it gets converted to a floating-point number
+which is 4 bytes.</p>
+<p>The polling rate of the data being requested from the BMS can be changed,
+using the <tt class="docutils literal">bms.set_query_rate()</tt> method.  Simply provide it with an integer
+period time, in miliseconds.  There is an example in the section below.</p>
+<p>If the BMS is not responding, then the method <tt class="docutils literal">bms.get_comm_error_state()</tt>
+will return true.  If it is responding and outputing valid data, it will
+return false.</p>
+</div>
+<div class="section" id="library-usage">
+<h1>Library Usage</h1>
+<div class="section" id="compile-time-options">
+<h2>Compile-time Options</h2>
+<p>Because SRAM on the Arduino AVR is scarce, certain parameters may be enabled or
+disabled before compiling to save memory.  If you would like to conserve
+memory in your sketch, find the following lines in the bms.h file, and
+comment the lines out by placing two forward slashes at the beginning of the
+line.  Most of these things are not needed.</p>
+<pre class="code C literal-block">
+<span class="cp">#define BMS_OPTION_PRODUCTION_DATE  </span><span class="c1">// Comment this out if reading the production date is not needed.
+</span><span class="cp">#define BMS_OPTION_SW_VERSION       </span><span class="c1">// Comment this out if reading the software version is not needed.
+</span><span class="cp">#define BMS_OPTION_NAME             </span><span class="c1">// Comment this out if reading the BMS name is not needed.
+</span><span class="cp">#define BMS_OPTION_FAULT_COUNTS     </span><span class="c1">// Comment this out to not store the number of times a fault occurred.
+//#define BMS_OPTION_DEBUG                // Uncomment this to output debug logging data on the Serial monitor port.
+//#define BMS_OPTION_DEBUG_STATE_MACHINE  // Uncomment this to output debug the state machine</span>
+</pre>
+</div>
+<div class="section" id="sketch-structure">
+<h2>Sketch Structure</h2>
+<p>Towards the top of your sketch, include the libray and call the constructor:</p>
+<pre class="code C literal-block">
+<span class="cp">#include</span> <span class="cpf">&quot;bms.h&quot;</span><span class="cp">
+</span>
+<span class="n">OverkillSolarBms</span> <span class="n">bms</span> <span class="o">=</span> <span class="n">OverkillSolarBms</span><span class="p">();</span>
+</pre>
+<p>Ensure that your sketch's setup() function looks something like this:</p>
+<pre class="code C literal-block">
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+
+    <span class="n">Serial1</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+    <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">Serial1</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// Wait for the BMS serial port to initialize
+</span>    <span class="p">}</span>
+
+    <span class="n">bms</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="o">&amp;</span><span class="n">Serial1</span><span class="p">);</span>
+<span class="p">}</span>
+</pre>
+<p>The Arduino will call this method once, when it is booted or rebooted.  This is
+typically where GPIO pins are configured, serial ports are configured, and
+other things.  We cannot do that outside of the setup() function because those
+resources are not guaranteed to be active until the setup() method is called.
+Certain Arduinos have multiple serial ports.  The desired serial port must be
+passed to the bms.begin() function, so that the library will know where to
+send and receive the data.  The while loop above is recommended.  It ensures
+that the serial port has fully initialized before the rest of the items are
+executed.</p>
+<p>Next, we move onto the loop() function.  The Arduino sketch will call this
+function repeatedly, until it is powered down or rebooted.   We call the
+<tt class="docutils literal">bms.main_task()</tt> function, which reads and writes data to the serial
+port.</p>
+<pre class="code C literal-block">
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">bms</span><span class="p">.</span><span class="n">main_task</span><span class="p">();</span>
+<span class="p">}</span>
+</pre>
+<p>If we need to do other things periodically, like maybe blink and LED, we can
+make our own task to do it.  Rather than using <tt class="docutils literal">delay(1000)</tt>, which would
+block our task from running, we use the system timer and an if statement.
+To blink the LED, we need to configure it in the setup() function, and we
+need to declare a global variable to store the last time we toggled the state:</p>
+<pre class="code C literal-block">
+<span class="cp">#include</span> <span class="cpf">&quot;bms.h&quot;</span><span class="cp">
+</span>
+<span class="n">OverkillSolarBms</span> <span class="n">bms</span> <span class="o">=</span> <span class="n">OverkillSolarBms</span><span class="p">();</span>
+<span class="kt">uint32_t</span> <span class="n">last_update</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">Serial1</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+    <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">Serial1</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// Wait for the BMS serial port to initialize
+</span>    <span class="p">}</span>
+
+    <span class="n">bms</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="o">&amp;</span><span class="n">Serial1</span><span class="p">);</span>
+    <span class="n">pinMode</span><span class="p">(</span><span class="n">LED_BUILTIN</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">bms</span><span class="p">.</span><span class="n">main_task</span><span class="p">();</span>
+
+    <span class="c1">// Do something at 1 millisecond
+</span>    <span class="k">if</span> <span class="p">(</span><span class="n">millis</span><span class="p">()</span> <span class="o">-</span> <span class="n">last_update</span> <span class="o">&gt;=</span> <span class="mi">2500</span><span class="p">)</span> <span class="p">{</span>
+       <span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED_BUILTIN</span><span class="p">,</span> <span class="o">!</span><span class="n">digitalRead</span><span class="p">(</span><span class="n">LED_BUILTIN</span><span class="p">));</span>
+       <span class="n">last_update</span> <span class="o">=</span> <span class="n">millis</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre>
+<p>So next, we will actually do something with the data received from the BMS.
+We will also set a custom polling rate.  Pretend in this example that we only
+want to read the BMS parameters every 2 seconds, to save battery power.
+This application only requires us to read the capacity and turn on the LED
+if it drops below 30%.</p>
+<pre class="code C literal-block">
+<span class="cp">#include</span> <span class="cpf">&quot;bms.h&quot;</span><span class="cp">
+</span>
+<span class="n">OverkillSolarBms</span> <span class="n">bms</span> <span class="o">=</span> <span class="n">OverkillSolarBms</span><span class="p">();</span>
+<span class="kt">uint32_t</span> <span class="n">last_soc_check_time</span><span class="p">;</span>
+
+<span class="cp">#define SOC_POLL_RATE 2000  </span><span class="c1">// milliseconds
+</span>
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">pinMode</span><span class="p">(</span><span class="n">LED_BUILTIN</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+    <span class="n">Serial1</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+    <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">Serial1</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// Wait for the BMS serial port to initialize
+</span>    <span class="p">}</span>
+    <span class="n">bms</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="o">&amp;</span><span class="n">Serial1</span><span class="p">);</span>
+    <span class="n">bms</span><span class="p">.</span><span class="n">set_query_rate</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>  <span class="c1">// Set query rate to 2000 milliseconds (2 seconds)
+</span>    <span class="n">last_soc_check_time</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">bms</span><span class="p">.</span><span class="n">main_task</span><span class="p">();</span>
+    <span class="kt">uint8_t</span> <span class="n">soc</span> <span class="o">=</span> <span class="n">bms</span><span class="p">.</span><span class="n">get_state_of_charge</span><span class="p">();</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">millis</span><span class="p">()</span> <span class="o">-</span> <span class="n">last_soc_check_time</span> <span class="o">&gt;</span> <span class="n">SOC_POLL_RATE</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">soc</span> <span class="o">&lt;</span> <span class="mi">30</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED_BUILTIN</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED_BUILTIN</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="n">last_soc_check_time</span> <span class="o">=</span> <span class="n">millis</span><span class="p">();</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre>
+</div>
+<div class="section" id="getting-basic-info">
+<h2>Getting basic info</h2>
+<p>The most important parameters that the BMS providers are listed below.
+Usage is quite straightforward.  Simply call the method(s) after the library has
+requested data from the BMS.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="8%" />
+<col width="24%" />
+<col width="7%" />
+<col width="44%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Parameter</th>
+<th class="head">Return Type</th>
+<th class="head">Method name</th>
+<th class="head">Units</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>Voltage</td>
+<td>float</td>
+<td><tt class="docutils literal">get_voltage()</tt></td>
+<td>volts</td>
+<td>Returns the total voltage</td>
+</tr>
+<tr><td>Current</td>
+<td>float</td>
+<td><tt class="docutils literal">get_current()</tt></td>
+<td>amps</td>
+<td>Returns the instantaneous current</td>
+</tr>
+<tr><td>Balance capacity</td>
+<td>float</td>
+<td><tt class="docutils literal">get_balance_capacity()</tt></td>
+<td>amp hours</td>
+<td>Returns the balance capacity</td>
+</tr>
+<tr><td>Rate capacity</td>
+<td>float</td>
+<td><tt class="docutils literal">get_rate_capacity()</tt></td>
+<td>amp hours</td>
+<td>Returns the rate capacity</td>
+</tr>
+<tr><td>State of charge</td>
+<td>uint8_t</td>
+<td><tt class="docutils literal">get_state_of_charge()</tt></td>
+<td>percent</td>
+<td>Returns the state of charge (0-100)</td>
+</tr>
+<tr><td>Cycle count</td>
+<td>uint16_t</td>
+<td><tt class="docutils literal">get_cycle_count()</tt></td>
+<td>cycles</td>
+<td>Returns the cycle count (number of charge/discharge cycles)</td>
+</tr>
+<tr><td>Discharge MOSFET status</td>
+<td>bool</td>
+<td><tt class="docutils literal">get_discharge_mosfet_status()</tt></td>
+<td>N/A</td>
+<td>Returns true if the discharge FET is enabled</td>
+</tr>
+<tr><td>Charge MOSFET status</td>
+<td>bool</td>
+<td><tt class="docutils literal">get_charge_mosfet_status()</tt></td>
+<td>N/A</td>
+<td>Returns true if the charge FET is enabled</td>
+</tr>
+<tr><td>Number of cells</td>
+<td>uint8_t</td>
+<td><tt class="docutils literal">get_num_cells()</tt></td>
+<td>N/A</td>
+<td>Returns the # of cells in which the BMS is configured for</td>
+</tr>
+<tr><td>Number of temp sensors</td>
+<td>uint8_t</td>
+<td><tt class="docutils literal">get_num_ntcs()</tt></td>
+<td>N/A</td>
+<td>Returns the # of temperature sensors</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="voltage-and-current-example">
+<h3>Voltage and Current example</h3>
+<pre class="code C literal-block">
+<span class="kt">float</span> <span class="n">voltage</span> <span class="o">=</span> <span class="n">bms</span><span class="p">.</span><span class="n">get_voltage</span><span class="p">();</span>
+<span class="n">lcd</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Voltage: &quot;</span><span class="p">);</span>
+<span class="n">lcd</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">voltage</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+<span class="n">lcd</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot; volts&quot;</span><span class="p">);</span>
+
+<span class="kt">float</span> <span class="n">current</span> <span class="o">=</span> <span class="n">bms</span><span class="p">.</span><span class="n">get_current</span><span class="p">();</span>
+<span class="n">lcd</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Current:&quot;</span> <span class="p">);</span>
+<span class="n">lcd</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">current</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="n">lcd</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot; amps&quot;</span><span class="p">);</span>
+</pre>
+<p>If your application requires current to be displayed in milliamps, then
+simply convert by multiplying times 1000:</p>
+<pre class="code C literal-block">
+<span class="kt">float</span> <span class="n">current</span> <span class="o">=</span> <span class="n">bms</span><span class="p">.</span><span class="n">get_current</span><span class="p">();</span>
+<span class="n">current</span> <span class="o">*=</span> <span class="mi">1000</span><span class="p">;</span>  <span class="c1">// Convert amps to mA
+</span><span class="n">lcd</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Current:&quot;</span> <span class="p">);</span>
+<span class="n">lcd</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">current</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>  <span class="c1">// Limit to zero decimal places
+</span><span class="n">lcd</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot; mA&quot;</span><span class="p">);</span>
+</pre>
+</div>
+<div class="section" id="capacity-example">
+<h3>Capacity example</h3>
+<p>The BMS returns two capacities: The balance capacity, and the rate capacity.
+Both are returned in amp hours (Ah).</p>
+<pre class="code C literal-block">
+<span class="kt">float</span> <span class="n">balance_capacity</span> <span class="o">=</span> <span class="n">bms</span><span class="p">.</span><span class="n">get_balance_capacity</span><span class="p">();</span>
+<span class="kt">float</span> <span class="n">rate_capacity</span>    <span class="o">=</span> <span class="n">bms</span><span class="p">.</span><span class="n">get_rate_capacity</span><span class="p">();</span>
+
+<span class="n">lcd</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Balance Capacity: &quot;</span><span class="p">);</span>
+<span class="n">lcd</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">balance_capacity</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+<span class="n">lcd</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot; Ah&quot;</span><span class="p">);</span>
+
+<span class="n">lcd</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Rate Capacity: &quot;</span><span class="p">);</span>
+<span class="n">lcd</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">rate_capacity</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+<span class="n">lcd</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot; Ah&quot;</span><span class="p">);</span>
+</pre>
+</div>
+<div class="section" id="power-example">
+<h3>Power example</h3>
+<p>There are no API methods to return the power in Watts.  But, power can be
+calculated from the current and voltage.refer to Ohm's law:</p>
+<div class="formula">
+<i>P</i> = <i>I</i>*<i>V</i>
+</div>
+<pre class="code C literal-block">
+<span class="kt">float</span> <span class="n">power</span> <span class="o">=</span> <span class="n">bms</span><span class="p">.</span><span class="n">get_voltage</span><span class="p">()</span> <span class="o">*</span> <span class="n">bms</span><span class="p">.</span><span class="n">get_current</span><span class="p">();</span>
+
+<span class="n">lcd</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Power: &quot;</span><span class="p">);</span>
+<span class="n">lcd</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">power</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="n">lcd</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot; watts&quot;</span><span class="p">);</span>
+</pre>
+</div>
+<div class="section" id="state-of-charge-example">
+<h3>State of Charge example</h3>
+<p>This is the fuel gauge readout for your battery.  The state of charge is
+returned as a percentage (0 to 100 percent).</p>
+<pre class="code C literal-block">
+<span class="kt">uint8_t</span> <span class="n">soc</span> <span class="o">=</span> <span class="n">bms</span><span class="p">.</span><span class="n">get_state_of_charge</span><span class="p">();</span>
+
+<span class="n">lcd</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;State of Charge: &quot;</span><span class="p">);</span>
+<span class="n">lcd</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">soc</span><span class="p">,</span> <span class="n">DEC</span><span class="p">);</span>
+<span class="n">lcd</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;%&quot;</span><span class="p">);</span>
+</pre>
+</div>
+<div class="section" id="cycle-count-example">
+<h3>Cycle count example</h3>
+<p>The cycle count represents the number of times the battery pack has been
+charged and discharged.  The result is an integer number that will increase
+over time.  Note that the typical LiFePO4 battery is good for several thousand
+cycles.  This is considerably more than lead-acid and Lithium Ion (e.g. NMC,
+NCA, LMO, LCO) batteries.</p>
+<pre class="code C literal-block">
+<span class="kt">uint16_t</span> <span class="n">cycle_count</span> <span class="o">=</span> <span class="n">bms</span><span class="p">.</span><span class="n">get_cycle_count</span><span class="p">();</span>
+
+<span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;This battery has been cycled &quot;</span><span class="p">);</span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">cycle_count</span><span class="p">,</span> <span class="n">DEC</span><span class="p">);</span>
+<span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot; times&quot;</span><span class="p">);</span>
+</pre>
+</div>
+<div class="section" id="charge-discharge-status-example">
+<h3>Charge / Discharge status example</h3>
+<p>To view the status of the BMS charge and discharge MOSFET switches</p>
+<pre class="code C literal-block">
+<span class="kt">bool</span> <span class="n">discharge_status</span> <span class="o">=</span> <span class="n">bms</span><span class="p">.</span><span class="n">get_discharge_mosfet_status</span><span class="p">();</span>
+<span class="kt">bool</span> <span class="n">charge_status</span>    <span class="o">=</span> <span class="n">bms</span><span class="p">.</span><span class="n">get_charge_mosfet_status</span><span class="p">();</span>
+
+<span class="n">lcd</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;The discharge FET is &quot;</span><span class="p">);</span>
+<span class="n">lcd</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">discharge_status</span><span class="o">?</span> <span class="s">&quot;on&quot;</span><span class="o">:</span> <span class="s">&quot;off&quot;</span><span class="p">);</span>
+
+<span class="n">lcd</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;The charge FET is &quot;</span><span class="p">);</span>
+<span class="n">lcd</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">charge_status</span><span class="o">?</span> <span class="s">&quot;on&quot;</span><span class="o">:</span> <span class="s">&quot;off&quot;</span><span class="p">);</span>
+</pre>
+</div>
+</div>
+<div class="section" id="ensuring-that-the-bms-data-is-being-received">
+<h2>Ensuring that the BMS data is being received</h2>
+<p>To make sure that you're receiving data, use <tt class="docutils literal">bms.get_comm_error_state()</tt>.
+It will will be true if the BMS is not responding (if the BMS has not responded
+within ).  You can use this to
+determine whether or not to write live data to the screen.</p>
+<pre class="code C literal-block">
+<span class="kt">bool</span> <span class="n">is_bms_not_responding</span> <span class="o">=</span> <span class="n">bms</span><span class="p">.</span><span class="n">get_comm_error_state</span><span class="p">();</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">is_bms_not_responding</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">lcd</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;No data from BMS&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="p">{</span>
+    <span class="n">lcd</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Voltage: &quot;</span><span class="p">);</span>
+    <span class="n">lcd</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">bms</span><span class="p">.</span><span class="n">get_voltage</span><span class="p">());</span>
+    <span class="n">lcd</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot; volts&quot;</span><span class="p">);</span>
+    <span class="c1">// etc...
+</span><span class="p">}</span>
+</pre>
+</div>
+<div class="section" id="getting-the-protection-status">
+<h2>Getting the Protection Status</h2>
+<p>The protection status is made up of thirteen status flags.  Each flag
+represents whether or not a particular thing has happened within the BMS.
+The status flags are returned in a single struct object.  The struct
+is a container that contains thirteen booleans.</p>
+<p>Here's a table of the flags returned:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="45%" />
+<col width="5%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Parameter</th>
+<th class="head">type</th>
+<th class="head">Variable name</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>Single-cell overvoltage protection</td>
+<td>bool</td>
+<td><tt class="docutils literal">single_cell_overvoltage_protection</tt></td>
+</tr>
+<tr><td>Single-cell undervoltage protection</td>
+<td>bool</td>
+<td><tt class="docutils literal">single_cell_undervoltage_protection</tt></td>
+</tr>
+<tr><td>Whole-pack overvoltage protection</td>
+<td>bool</td>
+<td><tt class="docutils literal">whole_pack_overvoltage_protection</tt></td>
+</tr>
+<tr><td>Whole-pack undervoltage protection</td>
+<td>bool</td>
+<td><tt class="docutils literal">whole_pack_undervoltage_protection</tt></td>
+</tr>
+<tr><td>Charging over-temperature protection</td>
+<td>bool</td>
+<td><tt class="docutils literal">charging_over_temperature_protection</tt></td>
+</tr>
+<tr><td>Charging low-temperature protection</td>
+<td>bool</td>
+<td><tt class="docutils literal">charging_low_temperature_protection</tt></td>
+</tr>
+<tr><td>Discharge over-temperature protection</td>
+<td>bool</td>
+<td><tt class="docutils literal">discharge_over_temperature_protection</tt></td>
+</tr>
+<tr><td>Discharge low-temperature protection</td>
+<td>bool</td>
+<td><tt class="docutils literal">discharge_low_temperature_protection</tt></td>
+</tr>
+<tr><td>Charging overcurrent protection</td>
+<td>bool</td>
+<td><tt class="docutils literal">charging_overcurrent_protection</tt></td>
+</tr>
+<tr><td>Discharge overcurrent protection</td>
+<td>bool</td>
+<td><tt class="docutils literal">discharge_overcurrent_protection</tt></td>
+</tr>
+<tr><td>Short-circuit protection</td>
+<td>bool</td>
+<td><tt class="docutils literal">short_circuit_protection</tt></td>
+</tr>
+<tr><td>Front-end detection IC error</td>
+<td>bool</td>
+<td><tt class="docutils literal">front_end_detection_ic_error</tt></td>
+</tr>
+<tr><td>Software lock MOS</td>
+<td>bool</td>
+<td><tt class="docutils literal">software_lock_mos</tt></td>
+</tr>
+</tbody>
+</table>
+<p>In call cases, true means that the fault is active.</p>
+<p>Here's how to check these flags in your code:</p>
+<pre class="code C literal-block">
+<span class="n">ProtectionStatus</span> <span class="n">flags</span> <span class="o">=</span> <span class="n">bms</span><span class="p">.</span><span class="n">get_protection_status</span><span class="p">();</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">flags</span><span class="p">.</span><span class="n">single_cell_overvoltage_protection</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">lcd</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Error: Single-cell over-voltage protection has occurred!&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">flags</span><span class="p">.</span><span class="n">single_cell_undervoltage_protection</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">lcd</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Error: Single-cell undervoltage protection has occurred!&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">flags</span><span class="p">.</span><span class="n">whole_pack_overvoltage_protection</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">lcd</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Error: Whole-pack overvoltage protection has occurred!&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">flags</span><span class="p">.</span><span class="n">whole_pack_undervoltage_protection</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">lcd</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Error: Whole-pack undervoltage protection has occurred!&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">flags</span><span class="p">.</span><span class="n">charging_over_temperature_protection</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">lcd</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Error: Charging over-temperature protection has occurred!&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">flags</span><span class="p">.</span><span class="n">charging_low_temperature_protection</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">lcd</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Error: Charging low-temperature protection has occurred!&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">flags</span><span class="p">.</span><span class="n">discharge_over_temperature_protection</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">lcd</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Error: Discharge over-temperature protection has occurred!&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">flags</span><span class="p">.</span><span class="n">discharge_low_temperature_protection</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">lcd</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Error: Discharge low-temperature protection has occurred!&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">flags</span><span class="p">.</span><span class="n">charging_overcurrent_protection</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">lcd</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Error: Charging overcurrent protection has occurred!&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">flags</span><span class="p">.</span><span class="n">discharge_overcurrent_protection</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">lcd</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Error: Discharge overcurrent protection has occurred!&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">flags</span><span class="p">.</span><span class="n">short_circuit_protection</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">lcd</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Error: Short-circuit protection has occurred!&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">flags</span><span class="p">.</span><span class="n">front_end_detection_ic_error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">lcd</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Error: Front-end detection IC error has occurred!&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">flags</span><span class="p">.</span><span class="n">software_lock_mos</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">lcd</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Error: Software lock MOS has occurred!&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre>
+<p>If you just want to see whether or not <em>any</em> error flag has been asserted,
+you can use this function:</p>
+<pre class="code C literal-block">
+<span class="kt">bool</span> <span class="n">has_something_gone_wrong</span> <span class="o">=</span> <span class="n">bms</span><span class="p">.</span><span class="n">get_protection_status_summary</span><span class="p">();</span>
+<span class="c1">// Returns True if any protection status bits are currently active
+</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">has_something_gone_wrong</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">lcd</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;oh dear&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre>
+</div>
+<div class="section" id="getting-the-voltage-and-balance-status-for-each-cell">
+<h2>Getting the voltage and balance status for each cell</h2>
+<p>Cell voltages can be requested as follows.  The <tt class="docutils literal">bms.get_cell_voltage()</tt>
+method must be passed the index of the cell to read.  Indexes start at zero
+and count up.</p>
+<pre class="code C literal-block">
+<span class="c1">// Get temperature sensor #1:
+</span><span class="kt">float</span> <span class="n">cell_1</span> <span class="o">=</span> <span class="n">bms</span><span class="p">.</span><span class="n">get_cell_voltage</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+
+<span class="c1">// Get temperature sensor #2:
+</span><span class="kt">float</span> <span class="n">cell_2</span> <span class="o">=</span> <span class="n">bms</span><span class="p">.</span><span class="n">get_cell_voltage</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+
+<span class="c1">// Print out all cell voltages:
+</span><span class="k">for</span> <span class="p">(</span><span class="kt">uint8_t</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">bms</span><span class="p">.</span><span class="n">get_num_cells</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Print each voltage with 3 decimal places
+</span>    <span class="n">lcd</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">bms</span><span class="p">.</span><span class="n">get_cell_voltage</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">3</span><span class="p">));</span>
+<span class="p">}</span>
+</pre>
+<p>Balance status can be requested as well.  The balance status is whether or not
+a particular cell in the pack is being balanced.  The <tt class="docutils literal">bms.get_balance_status()</tt>
+method must be passed the index of the cell.  Indexes start at zero and count
+up.</p>
+<pre class="code C literal-block">
+<span class="kt">bool</span> <span class="n">cell_1_status</span> <span class="o">=</span> <span class="n">bms</span><span class="p">.</span><span class="n">get_balance_status</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="kt">bool</span> <span class="n">cell_2_status</span> <span class="o">=</span> <span class="n">bms</span><span class="p">.</span><span class="n">get_balance_status</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="kt">bool</span> <span class="n">cell_3_status</span> <span class="o">=</span> <span class="n">bms</span><span class="p">.</span><span class="n">get_balance_status</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="kt">bool</span> <span class="n">cell_4_status</span> <span class="o">=</span> <span class="n">bms</span><span class="p">.</span><span class="n">get_balance_status</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+
+<span class="n">lcd</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Cell 1 is &quot;</span><span class="p">);</span>
+<span class="n">lcd</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">cell_1_status</span><span class="o">?</span> <span class="s">&quot;balancing&quot;</span> <span class="o">:</span> <span class="s">&quot;not balancing&quot;</span><span class="p">);</span>
+<span class="n">lcd</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Cell 2 is &quot;</span><span class="p">);</span>
+<span class="n">lcd</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">cell_2_status</span><span class="o">?</span> <span class="s">&quot;balancing&quot;</span> <span class="o">:</span> <span class="s">&quot;not balancing&quot;</span><span class="p">);</span>
+<span class="n">lcd</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Cell 3 is &quot;</span><span class="p">);</span>
+<span class="n">lcd</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">cell_3_status</span><span class="o">?</span> <span class="s">&quot;balancing&quot;</span> <span class="o">:</span> <span class="s">&quot;not balancing&quot;</span><span class="p">);</span>
+<span class="n">lcd</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Cell 4 is &quot;</span><span class="p">);</span>
+<span class="n">lcd</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">cell_4_status</span><span class="o">?</span> <span class="s">&quot;balancing&quot;</span> <span class="o">:</span> <span class="s">&quot;not balancing&quot;</span><span class="p">);</span>
+
+
+<span class="c1">// Or, here's the same thing in a for loop, which will handle any number of cells:
+</span><span class="k">for</span> <span class="p">(</span><span class="kt">uint8_t</span> <span class="n">i</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">bms</span><span class="p">.</span><span class="n">get_num_cells</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">lcd</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Cell &quot;</span><span class="p">);</span>
+    <span class="n">lcd</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="n">lcd</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;is &quot;</span><span class="p">);</span>
+    <span class="n">lcd</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">bms</span><span class="p">.</span><span class="n">get_balance_status</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">?</span> <span class="s">&quot;balancing&quot;</span> <span class="o">:</span> <span class="s">&quot;not balancing&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre>
+</div>
+<div class="section" id="getting-the-temperatures">
+<h2>Getting the temperatures</h2>
+<p>Temperatures can be requested as follows:</p>
+<pre class="code C literal-block">
+<span class="c1">// Get temperature sensor #1:
+</span><span class="kt">float</span> <span class="n">temp_batt</span> <span class="o">=</span> <span class="n">bms</span><span class="p">.</span><span class="n">get_ntc_temperature</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+
+<span class="c1">// Get temperature sensor #2:
+</span><span class="kt">float</span> <span class="n">temp_internal</span> <span class="o">=</span> <span class="n">bms</span><span class="p">.</span><span class="n">get_ntc_temperature</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+
+<span class="c1">// Print out all temperatures:
+</span><span class="k">for</span> <span class="p">(</span><span class="kt">uint8_t</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">bms</span><span class="p">.</span><span class="n">get_num_ntcs</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Print each temp with 2 decimal places
+</span>    <span class="n">lcd</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">bms</span><span class="p">.</span><span class="n">get_ntc_temperature</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">2</span><span class="p">));</span>
+<span class="p">}</span>
+</pre>
+<p>Temperatures are always return in Celsius.</p>
+</div>
+<div class="section" id="controlling-the-fets">
+<h2>Controlling the FETs</h2>
+<p>The BMS has two software-controllable MOSFETs:</p>
+<ol class="arabic simple">
+<li>The discharge FET.  When disabled, the BMS will not allow the battery to discharge</li>
+<li>The charge FET.  When disabled, the BMS will not charge the battery</li>
+</ol>
+<p>You can control them by writing boolean values to this function:</p>
+<pre class="code C literal-block">
+<span class="kt">bool</span> <span class="n">charge</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+<span class="kt">bool</span> <span class="n">discharge</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+<span class="n">bms</span><span class="p">.</span><span class="n">set_mosfet_control</span><span class="p">(</span><span class="n">charge</span><span class="p">,</span> <span class="n">discharge</span><span class="p">);</span>
+
+<span class="n">bms</span><span class="p">.</span><span class="n">set_mosfet_control</span><span class="p">(</span><span class="nb">true</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>  <span class="c1">// Turn both on
+</span><span class="n">bms</span><span class="p">.</span><span class="n">set_mosfet_control</span><span class="p">(</span><span class="nb">false</span><span class="p">,</span> <span class="nb">false</span><span class="p">);</span>  <span class="c1">// Turn both off</span>
+</pre>
+<p>Note that you can read the status of these MOSFETS (we discussed these earlier):</p>
+<pre class="code C literal-block">
+<span class="n">lcd</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;The discharge FET is &quot;</span><span class="p">);</span>
+<span class="n">lcd</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">bms</span><span class="p">.</span><span class="n">get_discharge_mosfet_status</span><span class="p">()</span><span class="o">?</span> <span class="s">&quot;on&quot;</span><span class="o">:</span> <span class="s">&quot;off&quot;</span><span class="p">);</span>
+
+<span class="n">lcd</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;The charge FET is &quot;</span><span class="p">);</span>
+<span class="n">lcd</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">bms</span><span class="p">.</span><span class="n">get_charge_mosfet_status</span><span class="p">()</span><span class="o">?</span> <span class="s">&quot;on&quot;</span><span class="o">:</span> <span class="s">&quot;off&quot;</span><span class="p">);</span>
+</pre>
+</div>
+<div class="section" id="getting-the-production-date">
+<h2>Getting the Production Date</h2>
+<p>First, make sure the line below is un-commented, in the options.h file:</p>
+<pre class="code C literal-block">
+<span class="cp">#define BMS_OPTION_PRODUCTION_DATE</span>
+</pre>
+<p>The date is returned as a <tt class="docutils literal">ProductionDate</tt> struct object.  It is a container
+of three integers: Day, month, and year.  They're access with the dot
+notation, shown below:</p>
+<pre class="code C literal-block">
+<span class="n">ProductionDate</span> <span class="n">date</span> <span class="o">=</span> <span class="n">bms</span><span class="p">.</span><span class="n">get_production_date</span><span class="p">();</span>
+<span class="n">lcd</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">date</span><span class="p">.</span><span class="n">day</span><span class="p">);</span>
+<span class="n">lcd</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">date</span><span class="p">.</span><span class="n">month</span><span class="p">);</span>
+<span class="n">lcd</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">date</span><span class="p">.</span><span class="n">year</span><span class="p">);</span>
+</pre>
+</div>
+<div class="section" id="getting-bms-fault-counts">
+<h2>Getting BMS Fault Counts</h2>
+<p>First, make sure the line below is un-commented, in the options.h file:</p>
+<pre class="code C literal-block">
+<span class="cp">#define BMS_OPTION_FAULT_COUNTS</span>
+</pre>
+<p>To read the fault counts:</p>
+<pre class="code C literal-block">
+<span class="n">FaultCount</span> <span class="n">fault_counts</span> <span class="o">=</span> <span class="n">bms</span><span class="p">.</span><span class="n">get_fault_counts</span><span class="p">();</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">fault_counts</span><span class="p">.</span><span class="n">single_cell_overvoltage_protection</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">lcd</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">fault_counts</span><span class="p">.</span><span class="n">single_cell_undervoltage_protection</span>
+<span class="n">fault_counts</span><span class="p">.</span><span class="n">whole_pack_overvoltage_protection</span>
+<span class="n">fault_counts</span><span class="p">.</span><span class="n">whole_pack_undervoltage_protection</span>
+<span class="n">fault_counts</span><span class="p">.</span><span class="n">charging_over_temperature_protection</span>
+<span class="n">fault_counts</span><span class="p">.</span><span class="n">charging_low_temperature_protection</span>
+<span class="n">fault_counts</span><span class="p">.</span><span class="n">discharge_over_temperature_protection</span>
+<span class="n">fault_counts</span><span class="p">.</span><span class="n">discharge_low_temperature_protection</span>
+<span class="n">fault_counts</span><span class="p">.</span><span class="n">charging_overcurrent_protection</span>
+<span class="n">fault_counts</span><span class="p">.</span><span class="n">discharge_overcurrent_protection</span>
+<span class="n">fault_counts</span><span class="p">.</span><span class="n">short_circuit_protection</span>
+<span class="n">fault_counts</span><span class="p">.</span><span class="n">front_end_detection_ic_error</span>
+<span class="n">fault_counts</span><span class="p">.</span><span class="n">software_lock_mos</span>
+</pre>
+<p>Fault counts can be reset to zero:</p>
+<pre class="code C literal-block">
+<span class="n">bms</span><span class="p">.</span><span class="n">clear_fault_counts</span><span class="p">();</span>
+</pre>
+</div>
+<div class="section" id="getting-the-bms-software-version">
+<h2>Getting the BMS Software Version</h2>
+<p>First, make sure the line below is un-commented, in the options.h file:</p>
+<pre class="code C literal-block">
+<span class="cp">#define BMS_OPTION_SW_VERSION</span>
+</pre>
+<p>The software version is returned as a struct object.  It's a container of
+two intergers: Major and minor.  We create a struct object of type
+SoftwareVersion to store it in.  Then the major and minor</p>
+<pre class="code C literal-block">
+<span class="n">SoftwareVersion</span> <span class="n">sw_version</span> <span class="n">bms</span><span class="p">.</span><span class="n">get_software_version</span><span class="p">();</span>
+<span class="n">lcd</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Software Version: &quot;</span><span class="p">);</span>
+<span class="n">lcd</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">sw_version</span><span class="p">.</span><span class="n">major</span><span class="p">,</span> <span class="n">DEC</span><span class="p">);</span>
+<span class="n">lcd</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="sc">'.'</span><span class="p">);</span>
+<span class="n">lcd</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">sw_version</span><span class="p">.</span><span class="n">minor</span><span class="p">,</span> <span class="n">DEC</span><span class="p">);</span>
+</pre>
+</div>
+<div class="section" id="getting-the-bms-name">
+<h2>Getting the BMS Name</h2>
+<p>First, make sure the line below is un-commented, in the options.h file:</p>
+<pre class="code C literal-block">
+<span class="cp">#define BMS_OPTION_NAME</span>
+</pre>
+<p>The BMS name is returned as a string.</p>
+<pre class="code C literal-block">
+<span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="n">bms</span><span class="p">.</span><span class="n">get_bms_name</span><span class="p">();</span>
+<span class="n">lcd</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;BMS Name: &quot;</span><span class="p">);</span>
+<span class="n">lcd</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+</pre>
+</div>
+<div class="section" id="debugging-and-status">
+<h2>Debugging and Status</h2>
+<p>First, make sure the line below is un-commented, in the options.h file:</p>
+<pre class="code C literal-block">
+<span class="cp">#define BMS_OPTION_DEBUG</span>
+</pre>
+<p>You can print out all of the BMS data to the monitor serial port.  Just make
+sure that some BMS data has been received and processed before calling it.</p>
+<pre class="code C literal-block">
+<span class="n">debug</span><span class="p">();</span>
+</pre>
+<p>If you're debugging protocol or communication errors, you can view the number
+of RX framing errors that have occured:</p>
+<pre class="code C literal-block">
+<span class="kt">uint8_t</span> <span class="n">num_rx_errors</span> <span class="o">=</span> <span class="n">bms</span><span class="p">.</span><span class="n">get_rx_errors</span><span class="p">();</span>  <span class="c1">// Returns the # of RX errors that have occured while trying to
+</span><span class="k">if</span> <span class="p">(</span><span class="n">num_rx_errors</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;We got &quot;</span><span class="p">);</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">num_rx_errors</span><span class="p">,</span> <span class="n">DEC</span><span class="p">);</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot; RX framing errors!&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre>
+</div>
+</div>
+<div class="section" id="contributing">
+<h1>Contributing</h1>
+<p>Send suggestions and bugs to <a class="reference external" href="mailto:OverkillSolar&#64;gmail.com">OverkillSolar&#64;gmail.com</a></p>
+</div>
+<div class="section" id="copyright-license">
+<h1>Copyright &amp; License</h1>
+<p>Copyright 2020 Neil Jansen (<a class="reference external" href="mailto:njansen1&#64;gmail.com">njansen1&#64;gmail.com</a>)</p>
+<p>Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:</p>
+<ol class="arabic simple">
+<li>Redistributions of source code must retain the above copyright notice,
+this list of conditions and the following disclaimer.</li>
+<li>Redistributions in binary form must reproduce the above copyright notice,
+this list of conditions and the following disclaimer in the documentation
+and/or other materials provided with the distribution.</li>
+<li>Neither the name of the copyright holder nor the names of its contributors
+may be used to endorse or promote products derived from this software
+without specific prior written permission.</li>
+</ol>
+<p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot;
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.</p>
+</div>
+</div>
+</body>
+</html>

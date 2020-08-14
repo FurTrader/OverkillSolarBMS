@@ -1,0 +1,208 @@
+/*
+:Author: Neil Jansen
+:Contact: njansen1@gmail.com
+:Copyright: BSD 3-clause (see LICENSE.txt)
+
+Stylesheet for use with Docutils.
+*/
+
+@import url(html4css1.css);
+
+/* Your customizations go here.  For example: */
+
+body {
+  font-family: Roboto, Verdana, sans-serif;
+  margin: 0px 100px 0px 100px;
+  line-height: 1.6;
+}
+
+em, i {
+  /* Typically serif fonts have much nicer italics */
+  font-family: Times New Roman, Times, serif;
+}
+
+/*a.target {
+  color: blue;
+}
+*/
+/*a.toc-backref {
+  text-decoration: none;
+  color: black;
+}
+*/
+a.toc-backref:hover {
+  background-color: inherit;
+}
+
+a:hover {
+  background-color: #cccccc;
+}
+
+div.attention, div.caution, div.danger, div.error, div.hint,
+div.important, div.note, div.tip, div.warning {
+  background-color: #cccccc;
+  padding: 3px;
+  width: 80%;
+}
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title  {
+  text-align: center;
+  background-color: #999999;
+  display: block;
+  margin: 0;
+}
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: #cc0000;
+  font-family: sans-serif;
+  text-align: center;
+  background-color: #999999;
+  display: block;
+  margin: 0;
+}
+
+pre.code .ln { color: grey; } /* line numbers */
+
+/* NOTE: Assumes Pygments-highlight mode is "Short" */
+pre.code .hll { background-color: #49483e }
+pre.code      { background: #272822; color: #f8f8f2 }
+pre.code .c   { color: #75715e } /* Comment */
+pre.code .err { color: #303030; background-color: #f92672 } /* Error */
+pre.code .k   { color: #66d9ef; font-weight: bold } /* Keyword */
+pre.code .l   { color: #ae81ff } /* Literal */
+pre.code .n   { color: #f8f8f2 } /* Name */
+pre.code .o   { color: #f92672 } /* Operator */
+pre.code .p   { color: #f8f8f2 } /* Punctuation */
+pre.code .ch  { color: #75715e } /* Comment.Hashbang */
+pre.code .cm  { color: #75715e } /* Comment.Multiline */
+pre.code .cp  { color: #f92472; font-weight: bold } /* Comment.Preproc */
+pre.code .cpf { color: #f92472; font-weight: bold } /* Comment.PreprocFile */
+pre.code .c1  { color: #75715e } /* Comment.Single */
+pre.code .cs  { color: #75715e } /* Comment.Special */
+pre.code .gd  { color: #f92672 } /* Generic.Deleted */
+pre.code .ge  { font-style: italic } /* Generic.Emph */
+pre.code .gi  { color: #a6e22e } /* Generic.Inserted */
+pre.code .gs  { font-weight: bold } /* Generic.Strong */
+pre.code .gu  { color: #75715e } /* Generic.Subheading */
+pre.code .kc  { color: #66d9ef } /* Keyword.Constant */
+pre.code .kd  { color: #66d9ef } /* Keyword.Declaration */
+pre.code .kn  { color: #f92672 } /* Keyword.Namespace */
+pre.code .kp  { color: #66d9ef } /* Keyword.Pseudo */
+pre.code .kr  { color: #66d9ef } /* Keyword.Reserved */
+pre.code .kt  { color: #66d9ef } /* Keyword.Type */
+pre.code .ld  { color: #e6db74 } /* Literal.Date */
+pre.code .m   { color: #ae81ff } /* Literal.Number */
+pre.code .s   { color: #e1da70 } /* Literal.String */
+pre.code .na  { color: #a6e22e } /* Name.Attribute */
+pre.code .nb  { color: #f8f8f2 } /* Name.Builtin */
+pre.code .nc  { color: #a6e22e } /* Name.Class */
+pre.code .no  { color: #66d9ef } /* Name.Constant */
+pre.code .nd  { color: #a6e22e } /* Name.Decorator */
+pre.code .ni  { color: #f8f8f2 } /* Name.Entity */
+pre.code .ne  { color: #a6e22e } /* Name.Exception */
+pre.code .nf  { color: #a6e22e } /* Name.Function */
+pre.code .nl  { color: #f8f8f2 } /* Name.Label */
+pre.code .nn  { color: #f8f8f2 } /* Name.Namespace */
+pre.code .nx  { color: #a6e22e } /* Name.Other */
+pre.code .py  { color: #f8f8f2 } /* Name.Property */
+pre.code .nt  { color: #f92672 } /* Name.Tag */
+pre.code .nv  { color: #f8f8f2 } /* Name.Variable */
+pre.code .ow  { color: #f92672 } /* Operator.Word */
+pre.code .w   { color: #f8f8f2 } /* Text.Whitespace */
+pre.code .mb  { color: #ae81ff } /* Literal.Number.Bin */
+pre.code .mf  { color: #ae81ff } /* Literal.Number.Float */
+pre.code .mh  { color: #ae81ff } /* Literal.Number.Hex */
+pre.code .mi  { color: #ae81ff } /* Literal.Number.Integer */
+pre.code .mo  { color: #ae81ff } /* Literal.Number.Oct */
+pre.code .sa  { color: #e1da70 } /* Literal.String.Affix */
+pre.code .sb  { color: #e1da70 } /* Literal.String.Backtick */
+pre.code .sc  { color: #e1da70 } /* Literal.String.Char */
+pre.code .dl  { color: #e1da70 } /* Literal.String.Delimiter */
+pre.code .sd  { color: #e1da70 } /* Literal.String.Doc */
+pre.code .s2  { color: #e1da70 } /* Literal.String.Double */
+pre.code .se  { color: #ae81ff } /* Literal.String.Escape */
+pre.code .sh  { color: #e1da70 } /* Literal.String.Heredoc */
+pre.code .si  { color: #e1da70 } /* Literal.String.Interpol */
+pre.code .sx  { color: #e1da70 } /* Literal.String.Other */
+pre.code .sr  { color: #e1da70 } /* Literal.String.Regex */
+pre.code .s1  { color: #e1da70 } /* Literal.String.Single */
+pre.code .ss  { color: #e1da70 } /* Literal.String.Symbol */
+pre.code .bp  { color: #f8f8f2 } /* Name.Builtin.Pseudo */
+pre.code .fm  { color: #a6e22e } /* Name.Function.Magic */
+pre.code .vc  { color: #f8f8f2 } /* Name.Variable.Class */
+pre.code .vg  { color: #f8f8f2 } /* Name.Variable.Global */
+pre.code .vi  { color: #f8f8f2 } /* Name.Variable.Instance */
+pre.code .vm  { color: #f8f8f2 } /* Name.Variable.Magic */
+pre.code .il  { color: #ae81ff } /* Literal.Number.Integer.Long */
+
+pre.literal-block, pre.doctest-block {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #606060;
+  padding: 15px;
+}
+
+h1 tt, h2 tt, h3 tt, h4 tt, h5 tt, h6 tt {
+  font-size: 100%;
+}
+
+code, tt {
+  color: #000066;
+}
+
+/*Top, right, bottom, left*/
+
+
+table {
+	margin: 0;
+	padding: 7px;
+	border: 0px;
+	outline: 0;
+	font-size: 100%;
+	font:inherit;
+	vertical-align:  baseline;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+th, td {
+  font-weight: unset;
+  padding-right: 10px;
+  vertical-align:  baseline;
+}
+
+th {
+  font-family: Roboto-Bold, Verdana, sans-serif;
+  font-weight: bold;
+  text-align: left;
+  padding-top: 12px;
+  padding-bottom: 5px;
+  color: #333333;
+  line-height: 1.4;
+  text-transform: uppercase;
+  border-bottom: 1px solid #a2a2a2;
+  border-left: 0px;
+  border-right: 0px;
+}
+
+td {
+  font-family: Roboto-Medium, Verdana, sans-serif;
+  font-size: 15px;
+  line-height: 1.4;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 1px solid #a2a2a2;
+}
+
+tr {
+  border-bottom: 1px solid #a2a2a2;
+}
+

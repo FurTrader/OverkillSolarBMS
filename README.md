@@ -4,12 +4,11 @@ This is a repository of all software and documentation related to the "Overkill 
 
 For sale on OverkillSolar.com
 
-For the freshest discussion, go to www.Reddit.com/r/OverkillSolarBMS/
-
 Also contact me at OverkillSolar@gmail.com
 
 It contains:
 
+- The complete BMS user's manual
 - desktop software for setting BMS parameters with a PC and a TTL com port (AKA the USB module)
 - Android app for setting BMS parameters with the Bluetooth module (use version 3.1.1015)
 - IOS app is on the Apple app store here: https://apps.apple.com/us/app/xiaoxiang-bms/id1375405426

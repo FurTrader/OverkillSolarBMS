@@ -4,7 +4,7 @@ This is a repository of all software and documentation related to the "Overkill 
 
 For sale on OverkillSolar.com
 
-Also contact me at OverkillSolar@gmail.com
+Also contact me at Support@OverkillSolar.com
 
 It contains:
 

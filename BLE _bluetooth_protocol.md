@@ -32,13 +32,15 @@ Some messages (the basic info message) are broken up and returned in 2 consecuti
 ### Normal BMS communication
 
 Write the following data to 0x0015:   
-dd | a5 | 03 00 | ff fd | 77   
+dd a5 03 00 ff fd 77   
 
 
 header | command | payload | checksum | footer
 | :---: | :---: | :---: |:---:| :---: |
-dd | a5 | 03 00 | ff fd | 77
+| dd | a5 | 03 00 | ff fd | 77 |
+| always the same   |read|0x03 basic info| sum of payload bytes subtracted from 0x10000 | always the same |
 
 
 The response comes back as 2 consecutive notifications to 0x0011.   
 Shorter responses come back as one notification.
+Typical response: dd 03 00 1b 05 34 00 00 19 ab 27 10 00 00 2a 75 00 00 00 00 00 20 42 03 04 02 09 7f 0b a3 fc 71 77

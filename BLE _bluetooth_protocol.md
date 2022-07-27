@@ -26,3 +26,19 @@ The payload data will be relayed to the UART.
 
 Any data that comes into the BLE module from the UART will be returned in a notification from characteristic FF01, also known as 0x0011.    
 Some messages (the basic info message) are broken up and returned in 2 consecutive notifications
+
+# Examples:
+
+### Normal BMS communication
+
+Write the following data to 0x0015:   
+dd | a5 | 03 00 | ff fd | 77   
+
+
+header | command | payload | checksum | footer
+| :---: | :---: | :---: |:---:| :---: |
+dd | a5 | 03 00 | ff fd | 77
+
+
+The response comes back as 2 consecutive notifications to 0x0011.   
+Shorter responses come back as one notification.

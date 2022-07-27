@@ -42,5 +42,5 @@ header | command | payload | checksum | footer
 
 
 The response comes back as 2 consecutive notifications to 0x0011.   
-Shorter responses come back as one notification.
-Typical response: dd 03 00 1b 05 34 00 00 19 ab 27 10 00 00 2a 75 00 00 00 00 00 20 42 03 04 02 09 7f 0b a3 fc 71 77
+Shorter responses come back as one notification.    
+Typical response looks like: dd 03 00 1b 05 34 00 00 19 ab 27 10 00 00 2a 75 00 00 00 00 00 20 42 03 04 02 09 7f 0b a3 fc 71 77

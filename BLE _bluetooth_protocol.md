@@ -96,9 +96,13 @@ Checksum = 0xFFDD
 
 Example:
 Basic info response
-| dd 03 | 00 1b 05 34 00 00 19 ab 27 10 00 00 2a 75 00 00 00 00 00 20 42 03 04 02 09 7f 0b a3 fc 71 | 77 |
+| dd 03 00 | 1b 05 34 00 00 19 ab 27 10 00 00 2a 75 00 00 00 00 00 00 20 42 03 04 02 09 7f 0b a3 | fc 71 77 |
 | :---:| :---: | :---: |
 |  | checksum of these bytes |  |
+
+sum(1b 05 34 00 00 19 ab 27 10 00 00 2a 75 00 00 00 00 00 00 20 42 03 04 02 09 7f 0b a3) = 0x38f    
+0x10000 - 0x38f = 0xfc71    
+Checksum = 0xfc71    
 
 There are a few messages that don't follow this pattern. The BMS sometimes responds with a "ok" or "access denied" message that doesnt have a valid checksum.
 

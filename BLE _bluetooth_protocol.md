@@ -54,6 +54,16 @@ The notification responses come only from the BLE module.
 Write the following data to 0x0015:    
 ff aa 07 03 61 73 73 51    
 
-header | length | payload | checksum 
-| :---: | :---: | :---: |:---:|
-| ff aa 07 | 03 | 66 73 73 | 51 |
+header | command | length | payload | checksum 
+| :---:| :---: | :---: | :---: |:---:|
+| ff | aa 07 | 03 | 66 73 73 | 51 |
+|    |    |    | the new name | modulo 256 of all bytes between header and checksum |
+
+The BLE module responds with a notification on 0x0011     
+This is always the same, I assume it means "ok" :     
+ff aa 07 00 07
+
+header | command | length | payload | checksum 
+| :---:| :---: | :---: | :---: |:---:|
+| ff | aa 07 | 00 |  | 07 |
+|    |    |    | nothing | modulo 256 of all bytes between header and checksum |

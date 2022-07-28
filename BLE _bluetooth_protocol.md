@@ -52,7 +52,7 @@ Typical response looks like: dd 03 00 1b 05 34 00 00 19 ab 27 10 00 00 2a 75 00 
 header | register | length | data | checksum | footer
 | :---: | :---: | :---: |:---:| :---: | :---: |
 | dd | 03 | 00 1b | 05 34 00 00 19 ab 27 10 00 00 2a 75 00 00 00 00 00 00 20 42 03 04 02 09 7f 0b a3 | fc 71 | 77   
-| always the same   | 0x03 basic info | 0x1b bytes to follow | sum of payload bytes subtracted from 0x10000 | always the same |
+| always the same   | 0x03 basic info | 0x1b bytes to follow | data | sum of payload bytes subtracted from 0x10000 | always the same |
 
 ### BLE Module Name Change
 
@@ -96,7 +96,7 @@ Checksum = 0xFFDD
 
 Example:
 Basic info response
-| dd 03 | 00 1b 05 34 00 00 19 ab 27 10 00 00 2a 75 00 00 00 00 00 20 42 03 04 02 09 7f 0b a3 fc 71 77
+| dd 03 | 00 1b 05 34 00 00 19 ab 27 10 00 00 2a 75 00 00 00 00 00 20 42 03 04 02 09 7f 0b a3 fc 71 | 77 |
 | :---:| :---: | :---: |
 |  | checksum of these bytes |  |
 

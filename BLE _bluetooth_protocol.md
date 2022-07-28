@@ -1,6 +1,19 @@
 # BLE protocol documentation
 ### Bluetooth module protocol for JBD BMSs
 
+___
+### Executive Summary
+
+Look for a BLE module advertising servive UUID FF00
+ 
+* Characteristic FF01 is Read/Notify from the UART   
+ *The module will notify when this value changes via the UART RX*
+
+* Characteristic FF02 is Write Without Response to the UART   
+ *The module will transmit on the UART when this value changes*     
+ *Can also be used to send instructions to the BLE module itself*
+___
+
 NOTE: I am transcribing my written notes a few months after doing this work and I may be forgetting the meaning of certain things.   
 All numbers are hexidecimal unless specified otherwise -ST    
 

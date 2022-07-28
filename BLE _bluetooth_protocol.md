@@ -44,3 +44,16 @@ header | command | payload | checksum | footer
 The response comes back as 2 consecutive notifications to 0x0011.   
 Shorter responses come back as one notification.    
 Typical response looks like: dd 03 00 1b 05 34 00 00 19 ab 27 10 00 00 2a 75 00 00 00 00 00 20 42 03 04 02 09 7f 0b a3 fc 71 77
+
+### BLE Module Name Change
+
+The module's advertising name can be changed by sending a message to 0x0015    
+The formatting of this message differs from normal BMS communication, and the BMS will ignore it.   
+The notification responses come only from the BLE module.
+
+Write the following data to 0x0015:    
+ff aa 07 03 61 73 73 51    
+
+header | length | payload | checksum 
+| :---: | :---: | :---: |:---:|
+| ff aa 07 | 03 | 66 73 73 | 51 |

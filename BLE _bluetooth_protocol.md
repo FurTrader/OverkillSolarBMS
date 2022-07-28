@@ -66,4 +66,4 @@ ff aa 07 00 07
 header | command | length | payload | checksum 
 | :---:| :---: | :---: | :---: |:---:|
 | ff | aa 07 | 00 |  | 07 |
-|    |    |    | nothing | modulo 256 of all bytes between header and checksum |
+|    |    |    | empty | modulo 256 of all bytes between header and checksum |

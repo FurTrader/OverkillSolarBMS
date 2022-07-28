@@ -7,10 +7,10 @@ ___
 Look for a BLE module advertising service UUID FF00
  
 * Characteristic FF01 is Read/Notify from the UART   
- *The module will notify when this value changes via the UART RX*
+ *The module will notify when this value is changed by the UART RX*
 
 * Characteristic FF02 is Write Without Response to the UART   
- *The module will transmit on the UART when this value changes*     
+ *The module will transmit on the UART TX when this value changes*     
  *Can also be used to send instructions to the BLE module itself*
 ___
 

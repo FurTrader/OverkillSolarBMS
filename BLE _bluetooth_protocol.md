@@ -56,7 +56,7 @@ ff aa 07 03 61 73 73 51
 
 header | command | length | payload | checksum 
 | :---:| :---: | :---: | :---: |:---:|
-| ff | aa 07 | 03 | 66 73 73 | 51 |
+| ff aa | 07 | 03 | 61 73 73 | 51 |
 |    |    |    | the new name | modulo 256 of all bytes between header and checksum |
 
 The BLE module responds with a notification on 0x0011     
@@ -65,5 +65,38 @@ ff aa 07 00 07
 
 header | command | length | payload | checksum 
 | :---:| :---: | :---: | :---: |:---:|
-| ff | aa 07 | 00 |  | 07 |
+| ff aa | 07 | 00 |  | 07 |
 |    |    |    | empty | modulo 256 of all bytes between header and checksum |
+
+# Checksum calculations
+
+### BMS communications
+
+The BMS communications include a 2 byte checksum which is the sum of the payload bytes subracted from 0x1000, all in hex
+
+Example:   
+Request basic info    
+| dd a5 | 03 00 | ff fd 77
+| :---:| :---: | :---: |
+|  | checksum of these bytes |  |
+
+There are a few messages that don't follow this pattern. The BMS sometimes responds with a "ok" or "access denied" message that doesnt have a valid checksum.
+
+### BLE module communications
+
+Messages that are directed at the BLE module use a different checksum called "checksum8 modulo 256".
+
+"modulo" is the remainder in a division operation.
+
+To calculate the checksum, add all the bytes between the header (ff) and checksum. Divide this by 0x100 (decimal 256).
+The remainder is the checksum.
+
+Example:   
+Send a name change to the BLE module
+| ff aa | 07 03 61 73 73 | 51 |
+| :---:| :---: | :---: |
+|  | calculate modulo 256 of these bytes |  |
+
+sum(07 03 61 73 73) = 0x151    
+0x151 / 0x100 = 0x01 modulo 0x51    
+Checksum = 0x51

@@ -80,6 +80,10 @@ Request basic info
 | :---:| :---: | :---: |
 |  | checksum of these bytes |  |
 
+sum(03 00) = 0x03    
+0x10000 - 0x03 = 0xffdd    
+Checksum = 0xFFDD     
+
 There are a few messages that don't follow this pattern. The BMS sometimes responds with a "ok" or "access denied" message that doesnt have a valid checksum.
 
 ### BLE module communications

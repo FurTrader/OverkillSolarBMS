@@ -4,7 +4,7 @@
 ___
 ### Executive Summary
 
-Look for a BLE module advertising servive UUID FF00
+Look for a BLE module advertising service UUID FF00
  
 * Characteristic FF01 is Read/Notify from the UART   
  *The module will notify when this value changes via the UART RX*

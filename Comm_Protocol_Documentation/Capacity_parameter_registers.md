@@ -9,6 +9,7 @@ Results for firmware 0x21:
 
 | parameter | Register |
 | :----: | :----: |
+| end voltage | 0x13 |
 | 10% | 0x46 |
 | 20% | 0x35 |
 | 30% | 0x45 |
@@ -19,5 +20,6 @@ Results for firmware 0x21:
 | 80% | 0x32 |
 | 90% | 0x42 |
 | 100% | 0x47 |
+| full voltage | 0x12 |
 
  

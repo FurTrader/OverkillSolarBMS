@@ -3,10 +3,9 @@
 It was recently brought to our attention that the newest JBD desktop app lists capacity parameters in 10 percent increments.   
 As far as we can remember, all of the apps used to list these parameters in 20 percent increments.    
 
-I sniffed out the registers using JBDTools -V2.9-20210524 to change each capacity parameter.   
+I sniffed out the registers by using JBDTools -V2.9-20210524 to change each capacity parameter.   
 
-First, I tried a 4s BMS with firmware version 0x21.    
-Results:    
+Results for firmware 0x21:    
 
 | parameter | Register |
 | :----: | :----: |

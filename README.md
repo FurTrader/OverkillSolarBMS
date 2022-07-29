@@ -14,7 +14,7 @@ It contains:
    [OverkillSolar opensource version](https://gitlab.com/Overkill-Solar-LLC/overkill-solar-bms-tools)
    
    [chinese version](https://github.com/FurTrader/OverkillSolarBMS/raw/master/Desktop%20app%20with%20password%20reset-%20JBDTools%20V2.9-20210524.zip)  
-- Android app for setting BMS parameters with the Bluetooth module (use version 3.1.1015)
+- Android app for setting BMS parameters with the Bluetooth module (use version 3.1.1026)
 - IOS app is on the Apple app store here: https://apps.apple.com/us/app/xiaoxiang-bms/id1375405426
 - Instructions for connecting the BMS to the various apps
 - Instructions for assembling a DIY LiFePo4 Battery with the BMS

@@ -41,6 +41,7 @@ I sniffed out the registers by using JBDTools -V2.9-20210524 to change each capa
 
 Note 1:    
   No attempt was made by the JBD app to read this register.     
+  I tried reading and writing these manually on the assumption that they would be the same as found for the newer firmware versions.   
   On attempting to write to these registers manually, the BMS reasponded "dd [register] 00 00 00 00 77"    
   Usually this means "ok" or "accepted", however on subsequent attempts to read this register manually    
   the BMS responded  "dd [register] 80 00 ff 80 77". Usually this means "fail" or "access denied"     

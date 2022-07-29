@@ -31,14 +31,14 @@ They all advertise one service UUID: FF00 with 2 properties, "FF01 Read Notify" 
 * The current versions advertise characteristics of "READ" and "WRITE WITHOUT RESPONSE"   
 
 
-Characteristic FF02 is also called 0x0015 in wireshark.   
+Characteristic FF02 is also called 0x0015 in (either wireshark or GATTTOOLS, I forget).   
 I dont know why but near as I can tell, FF02 and 0x0015 are the same thing.    
 characteristic FF01 is also known as 0x0011.
 
-To send data to the BMS, write to characteristic 0x0015.   
+To send data to the BMS, write to characteristic FF02.   
 The payload data will be relayed to the UART.
 
-Any data that comes into the BLE module from the UART will be returned in a notification from characteristic FF01, also known as 0x0011.    
+Any data that comes into the BLE module from the UART will be returned in a notification from characteristic FF01.    
 Some messages (the basic info message) are broken up and returned in 2 consecutive notifications
 
 # Examples:
@@ -48,7 +48,7 @@ Some messages (the basic info message) are broken up and returned in 2 consecuti
 The BMS never sends anything without a request
 
 __Request basic info__
-Write the following data to 0x0015:   
+Write the following data to FF02:   
 dd a5 03 00 ff fd 77   
 
 
@@ -59,7 +59,7 @@ header | command | payload | checksum | footer
 
 
 __Basic info response__
-The response comes back as 2 consecutive notifications to 0x0011.   
+The response comes back as 2 consecutive notifications to FF01.   
 Shorter responses come back as one notification.    
 Typical response looks like: dd 03 00 1b 05 34 00 00 19 ab 27 10 00 00 2a 75 00 00 00 00 00 00 20 42 03 04 02 09 7f 0b a3 fc 71 77   
 header | register | length | data | checksum | footer
@@ -69,12 +69,12 @@ header | register | length | data | checksum | footer
 
 ### BLE Module Name Change
 
-The module's advertising name can be changed by sending a message to 0x0015    
+The module's advertising name can be changed by sending a message to FF02    
 The formatting of this message differs from normal BMS communication, and the BMS will ignore it.   
 The notification responses come only from the BLE module.
 
 __Change the advertising name to "XYZ"__
-Write the following data to 0x0015:    
+Write the following data to FF02:    
 ff aa 07 03 58 59 5a 15    
 
 header | command | length | payload | checksum 
@@ -82,7 +82,7 @@ header | command | length | payload | checksum
 | ff aa | 07 | 03 | 58 59 5a | 15 |
 |    |    |    | the new name | modulo 256 of all bytes between header and checksum |
 
-The BLE module responds with a notification on 0x0011     
+The BLE module responds with a notification on FF01    
 This is always the same, I assume it means "ok" :     
 ff aa 07 00 07
 

@@ -39,5 +39,9 @@ I sniffed out the registers by using JBDTools -V2.9-20210524 to change each capa
 | 100% | note 1 |
 | Full voltage | 0x12 |
 
-Note 1: No attempt was made to read this register    
+Note 1: No attempt was made to read this register.     
+  On attempting to write to these registers, the BMS reasponded "dd [register] 00 00 00 00 77"    
+  Usually this means "ok" or "accepted", however on subsequent attempts to read this register manually    
+  the BMS responded  "dd [register] 80 00 ff 80 77". Usually this means "fail" or "access denied"     
+  
 Note 2: The JBD app attempted to read but the BMS responded "dd [register] 80 00 ff 80 77". Usually this means "fail" or "access denied"    

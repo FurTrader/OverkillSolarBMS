@@ -1,4 +1,4 @@
-#BMS Communication Protocol
+# BMS Communication Protocol
 
 This folder contains documentation on the JBD BMS communication protocol(s)
 

@@ -27,16 +27,16 @@ I sniffed out the registers by using JBDTools -V2.9-20210524 to change each capa
 | parameter | Register |
 | :----: | :----: |
 | End of voltage | 0x13 |
-| 10% | note 1 |
+| 10% | _note 1_ |
 | 20% | 0x35 |
-| 30% | note 1 |
+| 30% | _note 1_ |
 | 40% | 0x34 |
-| 50% | note 1 |
+| 50% | _note 1_ |
 | 60% | 0x33 |
-| 70% | note 1 |
+| 70% | _note 1_ |
 | 80% | 0x32 |
-| 90% | note 2 |
-| 100% | note 1 |
+| 90% | _note 2_ |
+| 100% | _note 1_ |
 | Full voltage | 0x12 |
 
 Note 1:    

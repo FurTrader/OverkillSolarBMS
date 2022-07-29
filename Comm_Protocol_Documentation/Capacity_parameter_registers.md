@@ -5,7 +5,7 @@ As far as we can remember, all of the apps used to list these parameters in 20 p
 
 I sniffed out the registers by using JBDTools -V2.9-20210524 to change each capacity parameter.   
 
-Results for firmware 0x21:    
+#### The following results are confirmed for 4s BMSs with firmware 0x21 and 0x20. 
 
 | parameter | Register |
 | :----: | :----: |
@@ -22,4 +22,22 @@ Results for firmware 0x21:
 | 100% | 0x47 |
 | Full voltage | 0x12 |
 
- 
+#### The following results are for a 4s with FW 0x15:
+
+| parameter | Register |
+| :----: | :----: |
+| End of voltage | 0x13 |
+| 10% | note 1 |
+| 20% | 0x35 |
+| 30% | note 1 |
+| 40% | 0x34 |
+| 50% | note 1 |
+| 60% | 0x33 |
+| 70% | note 1 |
+| 80% | 0x32 |
+| 90% | note 2 |
+| 100% | note 1 |
+| Full voltage | 0x12 |
+
+Note 1: No attempt was made to read this register    
+Note 2: The JBD app attempted to read but the BMS responded "dd [register] 80 00 ff 80 77". Usually this means "fail" or "access denied"    

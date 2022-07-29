@@ -18,4 +18,4 @@ It contains:
 - IOS app is on the Apple app store here: https://apps.apple.com/us/app/xiaoxiang-bms/id1375405426
 - Instructions for connecting the BMS to the various apps
 - Instructions for assembling a DIY LiFePo4 Battery with the BMS
-- Factory settings if you need to reset the BMS
+- [Factory settings if you need to reset the BMS](https://github.com/FurTrader/OverkillSolarBMS/blob/master/BMS_parameter_files.zip)

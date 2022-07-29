@@ -5,7 +5,10 @@ As far as we can remember, all of the apps used to list these parameters in 20 p
 
 I sniffed out the registers by using JBDTools -V2.9-20210524 to change each capacity parameter.   
 
-#### The following results are confirmed for 4s BMSs with firmware 0x21 and 0x20. 
+#### The following results are confirmed for:
+* 4s BMSs with firmware 0x21 and 0x20    
+* 
+* 16s BMSs with firmware 0x20    
 
 | parameter | Register |
 | :----: | :----: |
@@ -22,7 +25,9 @@ I sniffed out the registers by using JBDTools -V2.9-20210524 to change each capa
 | 100% | 0x47 |
 | Full voltage | 0x12 |
 
-#### The following results are for a 4s with FW 0x15:
+#### The following results are confirmed for:
+* 4s BMSs with firmware 0x15     
+* 8s BMSs with firmware 0x16
 
 | parameter | Register |
 | :----: | :----: |

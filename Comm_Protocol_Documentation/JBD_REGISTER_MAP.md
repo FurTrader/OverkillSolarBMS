@@ -1,3 +1,5 @@
+This document was created by reverse engineering by Eric Poulsen 
+
 # JBD BMS SERIAL INTERFACE AND REGISTER MAP
 
 ## Glossary / abbreviations

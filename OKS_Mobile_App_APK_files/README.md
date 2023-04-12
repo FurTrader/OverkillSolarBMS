@@ -12,14 +12,14 @@ You may have to enable permissions to install 3rd party apps.
 # Version Notes:
 
 VERSION 1.0.0 - Nov 17th, 2022    
-    - inital release
+- inital release
 VERSION 1.1.0 - Nov 21st, 2022    
-    - Feature added: BMS configuration data automatically loads when the user navigates to the “settings” tab
-    - UI update: Charge and Discharge indicator icons animate when active
-    - Bug fix: Keyboard automatically dismisses when user presses “Write to BMS” patching a bug where numeric entry was ignored untill the user closed the keyboard
-    - Bug fix: Load file and Save file titles were corrected, they were previously reversed
-    - Bug fix: Cell Balance Active indicators correspond to the correct cells, they were incorrectly associated previously
-    - known non-compatible devices:
+- Feature added: BMS configuration data automatically loads when the user navigates to the “settings” tab
+- UI update: Charge and Discharge indicator icons animate when active
+- Bug fix: Keyboard automatically dismisses when user presses “Write to BMS” patching a bug where numeric entry was ignored untill the user closed the keyboard
+- Bug fix: Load file and Save file titles were corrected, they were previously reversed
+- Bug fix: Cell Balance Active indicators correspond to the correct cells, they were incorrectly associated previously
+- known non-compatible devices:
         APPLICATION CRASH
         - LGE LG G Pad F 8.0 (Android 6.0)
         DEVICE SCAN FAILURE

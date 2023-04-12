@@ -1,6 +1,6 @@
 # Overkill Solar Mobile App APK files
 
-This directory contains the APK files for our mobile app, 
+This folder contains the APK files for our mobile app, 
 for users who prefer to sideload the app instead of using the Google Play Store.
 
 Find the version you want, download the APK to your device, navigate to it in your file manager, and install it.    

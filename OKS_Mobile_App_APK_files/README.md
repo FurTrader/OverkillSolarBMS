@@ -6,6 +6,10 @@ for users who prefer to sideload the app instead of using the Google Play Store.
 Find the version you want, download the APK to your device, navigate to it in your file manager, and install it.    
 You may have to enable permissions to install 3rd party apps.
 
+### OTA updates
+
+The app automatically receives OTA updates if it has internet access. When you load the APK you will initially have the version number of the last package release. If connected to the internet, it will silently update to the latest version, until the next new release.
+
 If you do want to use the Play Store, it's here: https://play.google.com/store/apps/details?id=com.marchingband.overkillsolar
 
 # Version Notes:

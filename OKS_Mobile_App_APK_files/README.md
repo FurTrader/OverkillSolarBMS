@@ -83,3 +83,8 @@ If you do want to use the Play Store, it's here: https://play.google.com/store/a
     - Bug fix: Devices screen lags with large number of BMSs, fixed by throttling Bluetooth Scan
     - Bug fix: Some unit labels were incorrect, and some values were displayed with incorrect precision
     - Bug fix: Occasional crash on iOS at launch, data race condition without proper error handling
+### VERSION 1.4.1 - May 22nd, 2023
+    - Feature Added: display NTC errors, alert on NTC errors, offer dialogue with NTC error info.
+    - Bug Fix: NTC should show on settings tab when disabled.
+    - Bug Fix: Current Calibration should write to BMS in units of 10mA.
+    - Bug Fix: BMS should not enumerate in devices tab until MAC has been obtained.

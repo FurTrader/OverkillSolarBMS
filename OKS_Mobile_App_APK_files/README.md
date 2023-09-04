@@ -14,6 +14,8 @@ If you do want to use the Play Store, it's here: https://play.google.com/store/a
 
 # Version Notes:
 
+### VERSION 1.5.0 - July 20th, 2023
+    - Feature Added: Tools Tab with Ohms Law Calculator and Resistor Color Calculator
 ### VERSION 1.4.1 - May 22nd, 2023
     - Feature Added: display NTC errors, alert on NTC errors, offer dialogue with NTC error info.
     - Bug Fix: NTC should show on settings tab when disabled.

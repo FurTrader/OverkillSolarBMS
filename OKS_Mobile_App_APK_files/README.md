@@ -14,6 +14,18 @@ If you do want to use the Play Store, it's here: https://play.google.com/store/a
 
 # Version Notes:
 
+### VERSION 1.5.2 - Sept 4th, 2023
+    - Bug Fix: ScrollView in tools menu should be full page.
+    - Bug Fix: ScrollView in tools menu should be padded less for keyboard on Android.
+
+### VERSION 1.5.1 - Sept 4th, 2023
+    - Feature Added: Help button with link to open docs, and send diagnostic report via email.
+    - Feature Added: New presets for Tesla.
+    - Feature Added: Display delimiting commas in tools tab for large integers.
+    - Feature Added: Auto-scroll to input fields when keypad opens.
+    - Feature Added: Versioned preset pack auto updates intelligently.
+    - Bug Fix: Respect BLE name character limit.
+
 ### VERSION 1.5.0 - July 20th, 2023
     - Feature Added: Tools Tab with Ohms Law Calculator and Resistor Color Calculator
 ### VERSION 1.4.1 - May 22nd, 2023

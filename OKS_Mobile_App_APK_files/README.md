@@ -14,6 +14,9 @@ If you do want to use the Play Store, it's here: https://play.google.com/store/a
 
 # Version Notes:
 
+### VERSION 1.5.3 - Sept 5th, 2023
+    - Bug Fix: NRC errors causing crash.
+
 ### VERSION 1.5.2 - Sept 4th, 2023
     - Bug Fix: ScrollView in tools menu should be full page.
     - Bug Fix: ScrollView in tools menu should be padded less for keyboard on Android.

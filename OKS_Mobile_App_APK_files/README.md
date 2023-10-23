@@ -14,6 +14,12 @@ If you do want to use the Play Store, it's here: https://play.google.com/store/a
 
 # Version Notes:
 
+### VERSION 1.5.5 - Oct 23rd, 2023
+    - Feature Added: Popup for Frontend IC Error, supress other errors if present.
+    
+### VERSION 1.5.4 - Oct 4th, 2023
+    - Bug Fix: Level 2 undervoltage protection popup erroneously triggered
+
 ### VERSION 1.5.3 - Sept 5th, 2023
     - Bug Fix: NRC errors causing crash.
 

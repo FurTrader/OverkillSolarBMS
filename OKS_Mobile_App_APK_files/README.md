@@ -14,6 +14,12 @@ If you do want to use the Play Store, it's here: https://play.google.com/store/a
 
 # Version Notes:
 
+### VERSION 1.5.7 - Dec 12th, 2023
+    - Bug Fix: Compatibility with BMSs using messages with >2 BLE packets. (ex. JBD-SP16S020-L16S-100A)
+
+### VERSION 1.5.6 - Nov 14th, 2023
+    - Bug Fix: Rename applied to correct NTC when active NTCs are not contiguous.
+
 ### VERSION 1.5.5 - Oct 23rd, 2023
     - Feature Added: Popup for Frontend IC Error, supress other errors if present.
     

@@ -1,5 +1,7 @@
 This document was created by reverse engineering by Eric Poulsen 
 
+Updated 12-12-2023: the map for the 0x03 message had an error, data byte 0x11 should have been skipped, so each byte index after that gets pushed +1 -Steve.
+
 # JBD BMS SERIAL INTERFACE AND REGISTER MAP
 
 ## Glossary / abbreviations
@@ -180,14 +182,14 @@ The checksum is simply sum of the payload byte values subtracted from 0x10000 (6
      <td></td>
     </tr>
     <tr>
-     <td>0x11</td>
+     <td>0x12</td>
      <td>Software Version</td>
      <td>1 byte: 0x10 = 1.0 (BCD?)</td>
      <td>--</td>
      <td>version</td>
      <td></td>
     <tr>
-     <td>0x12</td>
+     <td>0x13</td>
      <td>State of Charge</td>
      <td>1 byte</td>
      <td>percent</td>
@@ -195,7 +197,7 @@ The checksum is simply sum of the payload byte values subtracted from 0x10000 (6
      <td></td>
     </tr>
     <tr>
-     <td>0x13</td>
+     <td>0x14</td>
      <td>FET status</td>
      <td>1 byte</td>
      <td>
@@ -207,7 +209,7 @@ The checksum is simply sum of the payload byte values subtracted from 0x10000 (6
      <td></td>
     </tr>
     <tr>
-     <td>0x14</td>
+     <td>0x15</td>
      <td>Pack cells</td>
      <td>1 byte</td>
      <td>1 cell</td>
@@ -215,7 +217,7 @@ The checksum is simply sum of the payload byte values subtracted from 0x10000 (6
      <td></td>
     </tr>
     <tr>
-     <td>0x15</td>
+     <td>0x16</td>
      <td>NTC count</td>
      <td>1 byte</td>
      <td>1 NTC</td>
@@ -223,7 +225,7 @@ The checksum is simply sum of the payload byte values subtracted from 0x10000 (6
      <td></td>
     </tr>
     <tr>
-     <td>0x16 .. 0x16 + ntc_cnt x 2</td>
+     <td>0x17 .. 0x17 + ntc_cnt x 2</td>
      <td>NTC Values</td>
      <td>16 bits</td>
      <td>0.1K</td>

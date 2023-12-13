@@ -1,6 +1,8 @@
 This document was created by reverse engineering by Eric Poulsen 
 
-Updated 12-12-2023: the map for the 0x03 message had an error, data byte 0x11 should have been skipped, so each byte index after that gets pushed +1 -Steve.
+Updated 12-12-2023: The map for the 0x03 message had an error, data byte 0x11 should have been skipped, so each byte index after that gets pushed +1 -Steve.
+
+Updated 12-12-2023: Recent firmware versions append more data to the 0x03 message, added these as described in the JBD V11 protocol documentation.
 
 # JBD BMS SERIAL INTERFACE AND REGISTER MAP
 
@@ -230,6 +232,47 @@ The checksum is simply sum of the payload byte values subtracted from 0x10000 (6
      <td>16 bits</td>
      <td>0.1K</td>
      <td>ntc0, ntc1, &lt;etc&gt;</td>
+     <td></td>
+    </tr>
+    <tr>
+     <td>(0x17 + ntc_cnt x 2) </td>
+     <td>Humidity</td>
+     <td>1 byte</td>
+     <td>1 percent</td>
+     <td></td>
+     <td></td>
+    </tr>
+    <tr>
+     <td>(0x17 + ntc_cnt x 2) +1</td>
+     <td>Alarm Status</td>
+     <td>2 bytes</td>
+     <td>not used normally</td>
+     <td></td>
+     <td></td>
+    </tr>
+    <tr>
+     <td>(0x17 + ntc_cnt x 2) +3</td>
+     <td>Full charge capacity</td>
+     <td>2 bytes</td>
+     <td>10 mAH</td>
+     <td></td>
+     <td></td>
+    </tr>
+    <tr>
+     <td>(0x17 + ntc_cnt x 2) +5</td>
+     <td>Remaining capacity</td>
+     <td>2 bytes</td>
+     <td>10 mAH</td>
+     <td></td>
+     <td></td>
+    </tr>
+    <tr>
+     <td>(0x17 + ntc_cnt x 2) +7</td>
+     <td>Balance current</td>
+     <td>2 bytes</td>
+     <td>1 mA</td>
+     <td></td>
+     <td></td>
     </tr>
 </table>
 

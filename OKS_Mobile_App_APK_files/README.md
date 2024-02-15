@@ -14,6 +14,9 @@ If you do want to use the Play Store, it's here: https://play.google.com/store/a
 
 # Version Notes:
 
+### VERSION 1.6.0 - Feb 14th, 2024
+    - 
+
 ### VERSION 1.5.7 - Dec 12th, 2023
     - Bug Fix: Compatibility with BMSs using messages with >2 BLE packets. (ex. JBD-SP16S020-L16S-100A)
 

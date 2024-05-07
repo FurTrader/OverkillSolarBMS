@@ -4,6 +4,8 @@ Updated 12-12-2023: The map for the 0x03 message had an error, data byte 0x11 sh
 
 Updated 12-12-2023: Recent firmware versions append more data to the 0x03 message, added these as described in the JBD V11 protocol documentation.
 
+Updated 5-7-2024: More functions defined in parameter register 0x2D "Function Configuration"
+
 # JBD BMS SERIAL INTERFACE AND REGISTER MAP
 
 ## Glossary / abbreviations
@@ -780,6 +782,14 @@ Write the byte sequence 0x28, 0x28 to exit "Factory Mode," update the values in 
         bit 3: chg_balance_en<br>
         bit 4: led_en<br>
         bit 5: led_num<br>
+        bit 6: FCC restrictions<br>
+        bit 7: RTC enable<br>
+        bit 8: charging handshake enable<br>
+        bit 9: GPS function<br>
+        bit 10: buzzer function<br>
+        bit 11: starts battery mode<br>
+        bit 12: Current capacity unit identification, please note the details below<br>
+        bit 13: Built-in BLE Radio power (currently not used. proposed change to future version)<br>
      </td>
      <td> -- </td>
      <td>switch, scrl, balance_en, chg_balance_en, led_en, led_num</td>

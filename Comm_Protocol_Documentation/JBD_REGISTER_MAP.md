@@ -1077,3 +1077,17 @@ Write the byte sequence 0x28, 0x28 to exit "Factory Mode," update the values in 
     </tr> 
 
 </table>
+
+### 0x2D bit 12 details
+Setting this bit changes the multiplier on certain parameters.    
+I'm not quite sure which of the capacity registers is which because the JBD document was in chinese. TODO: figure out the missing register addresses.    
+| Register address | Parameter Name | Bit 12 = 0 | Bit 12 = 1 |
+|------------------|----------------|------------|------------|
+| ? | Remaining | 10mAh | 100mAh |
+| ? | Capacity Full | 10mAh | 100mAh |
+| ? | Charge Capacity | 10mAh | 100mAh |
+| 0x11 | cycle_cap | 10mAh | 100mAh |
+| ? | Nominal capacity | 10mA | 100mA |
+| 0x28 | chgoc | 10 mA | 100mA |
+| 0x29 | dsgoc | 10 mA | 100mA |
+| 0x2C | shunt_res| 0.1mΩ | 0.01mΩ |
